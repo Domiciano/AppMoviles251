@@ -77,7 +77,7 @@
       Semana 7
     </td>
     <td>
-      Asincronicidad y corutinas
+      Patrón de arquitectura y asincronicidad
     </td>
     <td style="vertical-align: middle;">
       17 de marzo de 2025
