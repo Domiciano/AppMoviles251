@@ -163,10 +163,10 @@ En el <a href="https://github.com/Domiciano/AppMoviles251/tree/main/Laboratorios
 
   <tr>
     <td>
-      Semana Santa
+      Semana
     </td>
     <td>
-      ...
+      Santa
     </td>
     <td style="vertical-align: middle;">
       14 de abril de 2025
