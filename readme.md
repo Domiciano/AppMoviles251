@@ -1,6 +1,7 @@
 
-  <img src="https://raw.githubusercontent.com/Domiciano/AppMoviles251/refs/heads/main/res/images/icesilogo.png" width="256">
-
+<img src="https://raw.githubusercontent.com/Domiciano/AppMoviles251/refs/heads/main/res/images/icesilogo.png" width="256">
+<br>
+Domiciano Rincón
 
 # Aplicaciones móviles
 Bienvenido a su único e inigualable curso de Aplicaciones Móviles. Aquí encontrará todos los medios necesarios para introducirse de lleno en el mundo del desarrollo móvil.<br><br>
