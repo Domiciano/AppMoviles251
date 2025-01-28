@@ -35,6 +35,9 @@ En este curso, el material son videos de Youtube. Véalos antes de cada clase de
   </tr>
 </table>
 
+# <a href="https://github.com/Domiciano/AppMoviles251/tree/main/Laboratorios">Laboratorios</a>
+En el <a href="https://github.com/Domiciano/AppMoviles251/tree/main/Laboratorios">link</a> podrá encontrar los laboratorios del curso
+
 # Planeador
 <table style="border-collapse: collapse; border: none;" border="0">
   <tr>
