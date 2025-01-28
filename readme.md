@@ -247,3 +247,79 @@ En el <a href="https://github.com/Domiciano/AppMoviles251/tree/main/Laboratorios
   
 </table>
 
+# Entregas
+
+<table style="border-collapse: collapse; border: none;" border="0">
+  <tr>
+    <td>
+      Pitch elevator
+    </td>
+    <td>
+      Semana 1
+    </td>
+    <td style="vertical-align: middle;">
+      Semana 5
+    </td>
+  </tr>
+  <tr>
+    <td>
+      Prototipo de la aplicación
+    </td>
+    <td>
+      Semana 6
+    </td>
+    <td style="vertical-align: middle;">
+      Semana 9
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      Modelo de base de datos
+    </td>
+    <td>
+      Semana 9
+    </td>
+    <td style="vertical-align: middle;">
+      Semana 10
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      Sprint 1
+    </td>
+    <td>
+      Semana 10
+    </td>
+    <td style="vertical-align: middle;">
+      Semana 12
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      Sprint 2
+    </td>
+    <td>
+      Semana 13
+    </td>
+    <td style="vertical-align: middle;">
+      Semana 15
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      Sprint 3
+    </td>
+    <td>
+      Semana 15
+    </td>
+    <td style="vertical-align: middle;">
+      Semana 18
+    </td>
+  </tr>
+  
+  
+</table>
