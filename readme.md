@@ -3,7 +3,7 @@ Bienvenido a su único e inigualable curso de Aplicaciones Móviles. Aquí encon
 Lo primero es que una al grupo del curso, para comunicarnos. (No stickers restrictions, pero sea respetuoso).
 
 
-<p align="center">
+
 
 <table style="border-collapse: collapse; border: none;" border="0">
   <tr>
@@ -17,7 +17,6 @@ Lo primero es que una al grupo del curso, para comunicarnos. (No stickers restri
     </td>
   </tr>
 </table>
-</p>
 
 # Videos
 En este curso, el material son videos de Youtube. Véalos antes de cada clase de acuerdo a las indicaciones del profe.
