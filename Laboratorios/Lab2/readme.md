@@ -1,6 +1,8 @@
 # Navigation con Compose
 
 En este laboratorio aprenderás a usar la navegación en Jetpack Compose. El objetivo es crear una aplicación inspirada en Spotify donde el usuario puede navegar a través de las pantallas, crear playlist y agregar canciones a cada playlist.<br><br>
+Consulte el <a href="https://www.figma.com/design/p0BC4jwSeRZrAfpxQ7CaJd/Login-Mobile-App-Screens-%7C-Free-(Community)?node-id=6-60&t=NJEheAiP3AIiwfaG-1">Figma</a> si requiere descargar los recursos<br><br>
+
 
 El objetivo de este laboratorio, es utilizar el navigation compose.<br><br>
 
