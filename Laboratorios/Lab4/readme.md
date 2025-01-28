@@ -15,3 +15,9 @@ Recuerde que la lógica de negocio se centra en Repository y el Service debe con
 # Repository
 - Usa la capa de service, es posible que necesite lógica adicional para ser enviada y transformada a la capa de la vista
 - Castea DTO en Domain Model
+
+Al inicio, especialmente en aplicaciones simples, el Repository parece un intermediario innecesario. Sin embargo con el tiempo, tu app puede necesitar cosas como:
+- Uso de una caché local.
+- Retries automáticos en fallos de red.
+- Transformaciones complejas de datos.
+- Esas tareas no deberían estar en el Service ni en la ViewModel.
