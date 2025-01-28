@@ -89,7 +89,7 @@
       Festivo
     </td>
     <td>
-      ...
+      Festivo
     </td>
     <td style="vertical-align: middle;">
       24 de marzo de 2025
@@ -112,10 +112,10 @@
   
   <tr>
     <td>
-      Configuración de Rest API con Directus y Postgres
+      Semana 10
     </td>
     <td>
-      ...
+      Configuración de Rest API con Directus y Postgres
     </td>
     <td style="vertical-align: middle;">
       7 de abril de 2025
