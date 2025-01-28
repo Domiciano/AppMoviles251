@@ -1,4 +1,4 @@
-<img src="https://www.icesi.edu.co/wp-content/uploads/2024/08/financiacion-universidad-icesi.png">
+<img src="https://raw.githubusercontent.com/Domiciano/AppMoviles251/refs/heads/main/res/images/icesilogo.png">
 
 # Aplicaciones móviles
 Bienvenido a su único e inigualable curso de Aplicaciones Móviles. Aquí encontrará todos los medios necesarios para introducirse de lleno en el mundo del desarrollo móvil.<br><br>
