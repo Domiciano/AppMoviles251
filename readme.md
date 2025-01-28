@@ -1,6 +1,5 @@
 
 <img src="https://raw.githubusercontent.com/Domiciano/AppMoviles251/refs/heads/main/res/images/icesilogo.png" width="256">
-<br>
 Domiciano Rincón
 
 # Aplicaciones móviles
