@@ -21,13 +21,13 @@ Modele el estado de la pantalla de Perfil. Cree el ViewModel `ProfileViewModel` 
 ## 2. PlaylistsScreen y NewPlaylistScreen
 Modele el estado de la pantalla de Perfil. Cree el ViewModel `PlaylistsViewModel` y vincúlelo a la vista. Tenga en cuenta que `PlaylistsScreen` muestra una lista de items. Aquí debe aplicar `LazyColum`.
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Domiciano/AppMoviles251/refs/heads/main/res/images/Lab3Image1.png" width="256" />
-  <img src="https://raw.githubusercontent.com/Domiciano/AppMoviles251/refs/heads/main/res/images/Lab3Image2.png" width="256" /> 
+  <img src="https://raw.githubusercontent.com/Domiciano/AppMoviles251/refs/heads/main/res/images/Lab3Image3.png" width="256" />
+  <img src="https://raw.githubusercontent.com/Domiciano/AppMoviles251/refs/heads/main/res/images/Lab3Image4.png" width="256" /> 
 </p>
 
 ## 3. PlaylistDetailScreen y NewSongScreen
 En esta vista se muestra una lista de canciones. Cree el ViewModel `PlaylistDetailViewModel` y vincúlelo a la vista. Verifique si la pantalla NewSongScreen debe tener estado almacenado en ViewModel o no.
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Domiciano/AppMoviles251/refs/heads/main/res/images/Lab3Image1.png" width="256" />
-  <img src="https://raw.githubusercontent.com/Domiciano/AppMoviles251/refs/heads/main/res/images/Lab3Image2.png" width="256" /> 
+  <img src="https://raw.githubusercontent.com/Domiciano/AppMoviles251/refs/heads/main/res/images/Lab3Image5.png" width="256" />
+  <img src="https://raw.githubusercontent.com/Domiciano/AppMoviles251/refs/heads/main/res/images/Lab3Image6.png" width="256" /> 
 </p>
