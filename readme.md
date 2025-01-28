@@ -260,6 +260,9 @@ En el <a href="https://github.com/Domiciano/AppMoviles251/tree/main/Laboratorios
     <td style="vertical-align: middle;">
       Semana 5
     </td>
+    <td style="vertical-align: middle;">
+      10%
+    </td>
   </tr>
   <tr>
     <td>
@@ -270,6 +273,9 @@ En el <a href="https://github.com/Domiciano/AppMoviles251/tree/main/Laboratorios
     </td>
     <td style="vertical-align: middle;">
       Semana 9
+    </td>
+    <td style="vertical-align: middle;">
+      15%
     </td>
   </tr>
 
@@ -283,6 +289,9 @@ En el <a href="https://github.com/Domiciano/AppMoviles251/tree/main/Laboratorios
     <td style="vertical-align: middle;">
       Semana 10
     </td>
+    <td style="vertical-align: middle;">
+      15%
+    </td>
   </tr>
 
   <tr>
@@ -294,6 +303,9 @@ En el <a href="https://github.com/Domiciano/AppMoviles251/tree/main/Laboratorios
     </td>
     <td style="vertical-align: middle;">
       Semana 12
+    </td>
+    <td style="vertical-align: middle;">
+      15%
     </td>
   </tr>
 
@@ -307,6 +319,9 @@ En el <a href="https://github.com/Domiciano/AppMoviles251/tree/main/Laboratorios
     <td style="vertical-align: middle;">
       Semana 15
     </td>
+    <td style="vertical-align: middle;">
+      15%
+    </td>
   </tr>
 
   <tr>
@@ -318,6 +333,24 @@ En el <a href="https://github.com/Domiciano/AppMoviles251/tree/main/Laboratorios
     </td>
     <td style="vertical-align: middle;">
       Semana 18
+    </td>
+    <td style="vertical-align: middle;">
+      15%
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Exhibición
+    </td>
+    <td>
+      Semana 1
+    </td>
+    <td style="vertical-align: middle;">
+      Semana 18
+    </td>
+    <td style="vertical-align: middle;">
+      15%
     </td>
   </tr>
   
