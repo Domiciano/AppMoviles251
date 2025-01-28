@@ -14,3 +14,4 @@ Recuerde que la lógica de negocio se centra en Repository y el Service debe con
 
 # Repository
 - Usa la capa de service, es posible que necesite lógica adicional para ser enviada y transformada a la capa de la vista
+- Castea DTO en Domain Model
