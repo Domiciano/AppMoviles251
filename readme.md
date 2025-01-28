@@ -1,3 +1,36 @@
+# Aplicaciones móviles
+Bienvenido a su único e inigualable curso de Aplicaciones Móviles. Aquí encontrará todos los medios necesarios para introducirse de lleno en el mundo del desarrollo móvil.<br><br>
+Lo primero es que una al grupo del curso, para comunicarnos. (No stickers restrictions, pero sea respetuoso).
+
+
+<table style="border-collapse: collapse; border: none;" border="0">
+  <tr>
+    <td>
+      <a href="https://miro.com/app/board/o9J_l2waJG0=">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/479px-WhatsApp.svg.png" width="64">
+      </a>
+    </td>
+    <td style="vertical-align: middle;">
+      <a href="https://chat.whatsapp.com/JYLSxmxlfz7FVj1XA3l3bI">Grupo de Whatsapp</a>
+    </td>
+  </tr>
+</table>
+
+# Videos
+En este curso, el material son videos de Youtube. Véalos antes de cada clase de acuerdo a las indicaciones del profe.
+
+<table style="border-collapse: collapse; border: none;" border="0">
+  <tr>
+    <td>
+      <a href="https://miro.com/app/board/o9J_l2waJG0=">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/479px-WhatsApp.svg.png" width="64">
+      </a>
+    </td>
+    <td style="vertical-align: middle;">
+      <a href="https://chat.whatsapp.com/JYLSxmxlfz7FVj1XA3l3bI">Grupo de Whatsapp</a>
+    </td>
+  </tr>
+</table>
 
 # Planeador
 <table style="border-collapse: collapse; border: none;" border="0">
