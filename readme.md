@@ -7,7 +7,7 @@ Lo primero es que una al grupo del curso, para comunicarnos. (No stickers restri
   <tr>
     <td>
       <a href="">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/479px-WhatsApp.svg.png" width="32">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/479px-WhatsApp.svg.png" width="64">
       </a>
     </td>
     <td style="vertical-align: middle;">
@@ -23,7 +23,7 @@ En este curso, el material son videos de Youtube. Véalos antes de cada clase de
   <tr>
     <td>
       <a href="https://miro.com/app/board/o9J_l2waJG0=">
-        <img src="https://store-images.s-microsoft.com/image/apps.59334.13959754522315136.c4ea2415-8e3c-42bf-8f77-e885eb7c11a1.be6eacf3-e0b4-4478-9abc-47192806c1b5" width="32">
+        <img src="https://store-images.s-microsoft.com/image/apps.59334.13959754522315136.c4ea2415-8e3c-42bf-8f77-e885eb7c11a1.be6eacf3-e0b4-4478-9abc-47192806c1b5" width="64">
       </a>
     </td>
     <td style="vertical-align: middle;">
