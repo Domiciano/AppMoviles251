@@ -7,7 +7,11 @@ Consulte el <a href="https://www.figma.com/design/p0BC4jwSeRZrAfpxQ7CaJd/Login-M
 El objetivo de este laboratorio, es utilizar el navigation compose.<br><br>
 
 ## 1. Esquema de navegación
-Defina el esquema de navegación entre las pantallas. Debe tener claro que hay pantallas anidadas y por lo tanto `NavigationController` anidados. Observe la barra de navegación inferior, se dará una idea de cómo está ensamblada la aplicación
+Defina el esquema de navegación entre las pantallas. Debe tener claro que hay pantallas anidadas y por lo tanto `NavigationController` anidados. Observe la barra de navegación inferior, se dará una idea de cómo está ensamblada la aplicación.
+Para poder usar el esquema de navegación, use la librería de Navgation Compose
+```
+implementation("androidx.navigation:navigation-compose:2.7.7")
+```
 
 
 ## 2. Edición de perfil
