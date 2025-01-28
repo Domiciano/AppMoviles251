@@ -250,6 +250,13 @@ En el <a href="https://github.com/Domiciano/AppMoviles251/tree/main/Laboratorios
 # Entregas
 
 <table style="border-collapse: collapse; border: none;" border="0">
+
+  <tr>
+    <th>Asignación</th>
+    <th>Inicia en</th>
+    <th>Finaliza en</th>
+    <th>Peso</th>
+  </tr>
   <tr>
     <td>
       Pitch elevator
