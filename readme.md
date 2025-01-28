@@ -6,7 +6,7 @@ Lo primero es que una al grupo del curso, para comunicarnos. (No stickers restri
 <table style="border-collapse: collapse; border: none;" border="0">
   <tr>
     <td>
-      <a href="">
+      <a href="https://chat.whatsapp.com/JYLSxmxlfz7FVj1XA3l3bI">
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/479px-WhatsApp.svg.png" width="64">
       </a>
     </td>
@@ -27,7 +27,7 @@ En este curso, el material son videos de Youtube. Véalos antes de cada clase de
       </a>
     </td>
     <td style="vertical-align: middle;">
-      <a href="https://chat.whatsapp.com/JYLSxmxlfz7FVj1XA3l3bI">Videos de Aplicaciones Móviles</a>
+      <a href="https://miro.com/app/board/o9J_l2waJG0=">Videos de Aplicaciones Móviles</a>
     </td>
   </tr>
 </table>
