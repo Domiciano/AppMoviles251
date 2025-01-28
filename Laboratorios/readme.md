@@ -26,5 +26,5 @@ En este laboratorio aprenderás a trabajar con ViewModel en un esquema de navega
 </p>
 
 <p align="center">
-<a href="https://github.com/Domiciano/AppMoviles251/tree/main/Laboratorios/Lab3"><img src="https://raw.githubusercontent.com/Domiciano/AppMoviles251/refs/heads/main/res/images/Lab3Image1.png" width="386"></a><br>
+<a href="https://github.com/Domiciano/AppMoviles251/tree/main/Laboratorios/Lab3"><img src="https://raw.githubusercontent.com/Domiciano/AppMoviles251/refs/heads/main/res/images/Lab3Cover.png" width="386"></a><br>
 </p>
