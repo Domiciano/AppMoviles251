@@ -53,7 +53,7 @@
       Semana 5
     </td>
     <td>
-      ...
+      Pitch Elevator de los proyectos
     </td>
     <td style="vertical-align: middle;">
       3 de marzo de 2025
