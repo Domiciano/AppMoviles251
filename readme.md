@@ -42,7 +42,7 @@ En el <a href="https://github.com/Domiciano/AppMoviles251/tree/main/Laboratorios
 <table style="border-collapse: collapse; border: none;" border="0">
   <tr>
     <td>
-      Semana 1
+      S1
     </td>
     <td>
       Presentación del curso
@@ -54,7 +54,7 @@ En el <a href="https://github.com/Domiciano/AppMoviles251/tree/main/Laboratorios
   </tr>
   <tr>
     <td>
-      Semana 2
+      S2
     </td>
     <td>
       Creación de pantallas y componentes
@@ -66,7 +66,7 @@ En el <a href="https://github.com/Domiciano/AppMoviles251/tree/main/Laboratorios
 
   <tr>
     <td>
-      Semana 3
+      S3
     </td>
     <td>
       Navegación
@@ -78,7 +78,7 @@ En el <a href="https://github.com/Domiciano/AppMoviles251/tree/main/Laboratorios
 
   <tr>
     <td>
-      Semana 4
+      S4
     </td>
     <td>
       Listas
@@ -90,7 +90,7 @@ En el <a href="https://github.com/Domiciano/AppMoviles251/tree/main/Laboratorios
 
   <tr>
     <td>
-      Semana 5
+      S5
     </td>
     <td>
       Pitch Elevator de los proyectos
@@ -102,7 +102,7 @@ En el <a href="https://github.com/Domiciano/AppMoviles251/tree/main/Laboratorios
 
   <tr>
     <td>
-      Semana 6
+      S6
     </td>
     <td>
       Taller de UI/UX
@@ -114,7 +114,7 @@ En el <a href="https://github.com/Domiciano/AppMoviles251/tree/main/Laboratorios
   
   <tr>
     <td>
-      Semana 7
+      S7
     </td>
     <td>
       Patrón de arquitectura y asincronicidad
@@ -139,7 +139,7 @@ En el <a href="https://github.com/Domiciano/AppMoviles251/tree/main/Laboratorios
   
   <tr>
     <td>
-      Semana 9
+      S9
     </td>
     <td>
       Consumo de Rest API, Retrofit
@@ -152,7 +152,7 @@ En el <a href="https://github.com/Domiciano/AppMoviles251/tree/main/Laboratorios
   
   <tr>
     <td>
-      Semana 10
+      S10
     </td>
     <td>
       Configuración de Rest API con Directus y Postgres
@@ -176,7 +176,7 @@ En el <a href="https://github.com/Domiciano/AppMoviles251/tree/main/Laboratorios
 
   <tr>
     <td>
-      Semana 11
+      S11
     </td>
     <td>
       Autenticación y autorización
@@ -188,7 +188,7 @@ En el <a href="https://github.com/Domiciano/AppMoviles251/tree/main/Laboratorios
 
   <tr>
     <td>
-      Semana 12
+      S12
     </td>
     <td>
       Interacción con Rest API para entidades en directus
@@ -200,7 +200,7 @@ En el <a href="https://github.com/Domiciano/AppMoviles251/tree/main/Laboratorios
 
   <tr>
     <td>
-      Semana 13
+      S13
     </td>
     <td>
       Interacción con Rest API para entidades en directus 
@@ -212,7 +212,7 @@ En el <a href="https://github.com/Domiciano/AppMoviles251/tree/main/Laboratorios
 
   <tr>
     <td>
-      Semana 14
+      S14
     </td>
     <td>
       Storage, cámara y galería
@@ -224,7 +224,7 @@ En el <a href="https://github.com/Domiciano/AppMoviles251/tree/main/Laboratorios
 
   <tr>
     <td>
-      Semana 15
+      S15
     </td>
     <td>
       Notificaciones Push
@@ -236,7 +236,7 @@ En el <a href="https://github.com/Domiciano/AppMoviles251/tree/main/Laboratorios
 
   <tr>
     <td>
-      Semana 16
+      S16
     </td>
     <td>
       Google Maps
