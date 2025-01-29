@@ -87,6 +87,7 @@ En el <a href="https://github.com/Domiciano/AppMoviles251/tree/main/Laboratorios
     </td>
     <td>
       Navegación
+      <p>Laboratorio 2. En el que usaremos Navigation Compose. Luego trataremos la capa de ViewModel y variables de estado usando LiveData</p>
     </td>
     <td style="vertical-align: middle;">
       17 de febrero de 2025
