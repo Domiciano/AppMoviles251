@@ -46,6 +46,7 @@ En el <a href="https://github.com/Domiciano/AppMoviles251/tree/main/Laboratorios
     </td>
     <td>
       Presentación del curso
+      <p>Reglas. Alistamiento y configuración del ambiente de desarrollo. Selección de equipos</p>
     </td>
     <td style="vertical-align: middle;">
       3 de febrero de 2025
