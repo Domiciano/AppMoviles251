@@ -74,6 +74,7 @@ En el <a href="https://github.com/Domiciano/AppMoviles251/tree/main/Laboratorios
     </td>
     <td>
       Creación de pantallas y componentes
+      <p>Laboratorio 1. En el que practicaremos el tema de construcción de vistas. Aboradremos el tema de funciones en Kotlin y hablaremos de variables de estado, explicando el funcionamiento del TextField</p>
     </td>
     <td style="vertical-align: middle;">
       10 de febrero de 2025
