@@ -38,6 +38,22 @@ En este curso, el material son videos de Youtube. Véalos antes de cada clase de
 # <a href="https://github.com/Domiciano/AppMoviles251/tree/main/Laboratorios/readme.md">Laboratorios</a>
 En el <a href="https://github.com/Domiciano/AppMoviles251/tree/main/Laboratorios/readme.md">link</a> podrá encontrar los laboratorios del curso
 
+# Calificaciones
+
+<table style="border-collapse: collapse; border: none;" border="0">
+  <tr>
+    <td>
+      <a href="https://docs.google.com/spreadsheets/d/13BZAcaCm4q2huaxT8fdEFLEQxcjKCF_y/edit?usp=sharing&ouid=117897710133227559254&rtpof=true&sd=true">
+        <img src="https://cdn-icons-png.flaticon.com/512/5968/5968557.png" width="64">
+      </a>
+    </td>
+    <td style="vertical-align: middle;">
+      <a href="https://docs.google.com/spreadsheets/d/13BZAcaCm4q2huaxT8fdEFLEQxcjKCF_y/edit?usp=sharing&ouid=117897710133227559254&rtpof=true&sd=true">Calificaciones</a>
+    </td>
+  </tr>
+</table>
+
+
 # Planeador
 <table style="border-collapse: collapse; border: none;" border="0">
   <tr>
