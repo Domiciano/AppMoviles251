@@ -293,10 +293,10 @@ En el <a href="https://github.com/Domiciano/AppMoviles251/tree/main/Laboratorios
       Prototipo de la aplicación
     </td>
     <td>
-      Semana 6
+      Semana 5
     </td>
     <td style="vertical-align: middle;">
-      Semana 9
+      Semana 8
     </td>
     <td style="vertical-align: middle;">
       15%
@@ -308,10 +308,10 @@ En el <a href="https://github.com/Domiciano/AppMoviles251/tree/main/Laboratorios
       Modelo de base de datos
     </td>
     <td>
-      Semana 9
+      Semana 8
     </td>
     <td style="vertical-align: middle;">
-      Semana 10
+      Semana 9
     </td>
     <td style="vertical-align: middle;">
       15%
@@ -323,10 +323,10 @@ En el <a href="https://github.com/Domiciano/AppMoviles251/tree/main/Laboratorios
       Sprint 1
     </td>
     <td>
-      Semana 10
+      Semana 9
     </td>
     <td style="vertical-align: middle;">
-      Semana 12
+      Semana 13
     </td>
     <td style="vertical-align: middle;">
       15%
