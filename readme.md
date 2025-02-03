@@ -5,6 +5,8 @@
 Bienvenido a su único e inigualable curso de Aplicaciones Móviles. Aquí encontrará todos los medios necesarios para introducirse de lleno en el mundo del desarrollo móvil.<br><br>
 Lo primero es que una al grupo del curso, para comunicarnos. (No stickers restrictions, pero sea respetuoso).
 
+https://docs.google.com/spreadsheets/d/1AiVL0WGOGiyEAtOnwi56GdupQXM0qQDCO-r8HrR0SCc/edit?usp=sharing
+
 
 <table style="border-collapse: collapse; border: none;" border="0">
   <tr>
