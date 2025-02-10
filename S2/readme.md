@@ -1,4 +1,5 @@
-#Sesión 2
+# Sesión 2
+
 En esta sesión, hicimos los ejercicio de UI Basics de Jetpack Compose. Además introducimos el concepto de estado y de lambas de kotlin. Sufrimos un poco a causa de una desafortunada multiplicación por 0, pero lo logramos y pudimos explicar el funcionamiento de estados en un TextField
 ```kotlin
 import android.os.Bundle
