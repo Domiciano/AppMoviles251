@@ -163,7 +163,7 @@ En el <a href="https://github.com/Domiciano/AppMoviles251/tree/main/Laboratorios
       S9
     </td>
     <td>
-      
+      ...
     </td>
     <td style="vertical-align: middle;">
       31 de marzo de 2025
