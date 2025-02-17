@@ -119,14 +119,14 @@ En el <a href="https://github.com/Domiciano/AppMoviles251/tree/main/Laboratorios
       3 de marzo de 2025
     </td>
   </tr>
-    Patrón de arquitectura y asincronicidad
-    Consumo de Rest API, Retrofit
+    
   <tr>
     <td>
       S6
     </td>
     <td>
-      ...
+      Patrón de arquitectura y asincronicidad
+      Consumo de Rest API, Retrofit
     </td>
     <td style="vertical-align: middle;">
       10 de marzo de 2025
