@@ -314,7 +314,7 @@ En el <a href="https://github.com/Domiciano/AppMoviles251/tree/main/Laboratorios
       Prototipo de la aplicación
     </td>
     <td>
-      Semana 8
+      Semana 7
     </td>
     <td style="vertical-align: middle;">
       Semana 9
