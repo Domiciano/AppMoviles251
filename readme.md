@@ -119,13 +119,14 @@ En el <a href="https://github.com/Domiciano/AppMoviles251/tree/main/Laboratorios
       3 de marzo de 2025
     </td>
   </tr>
-
+    Patrón de arquitectura y asincronicidad
+    Consumo de Rest API, Retrofit
   <tr>
     <td>
       S6
     </td>
     <td>
-      Taller de UI/UX
+      
     </td>
     <td style="vertical-align: middle;">
       10 de marzo de 2025
@@ -137,7 +138,7 @@ En el <a href="https://github.com/Domiciano/AppMoviles251/tree/main/Laboratorios
       S7
     </td>
     <td>
-      Patrón de arquitectura y asincronicidad
+      Taller de UI/UX
     </td>
     <td style="vertical-align: middle;">
       17 de marzo de 2025
@@ -162,7 +163,7 @@ En el <a href="https://github.com/Domiciano/AppMoviles251/tree/main/Laboratorios
       S9
     </td>
     <td>
-      Consumo de Rest API, Retrofit
+      
     </td>
     <td style="vertical-align: middle;">
       31 de marzo de 2025
