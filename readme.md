@@ -126,7 +126,7 @@ En el <a href="https://github.com/Domiciano/AppMoviles251/tree/main/Laboratorios
       S6
     </td>
     <td>
-      
+      ...
     </td>
     <td style="vertical-align: middle;">
       10 de marzo de 2025
