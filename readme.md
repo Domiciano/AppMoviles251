@@ -314,10 +314,10 @@ En el <a href="https://github.com/Domiciano/AppMoviles251/tree/main/Laboratorios
       Prototipo de la aplicación
     </td>
     <td>
-      Semana 7
+      Semana 8
     </td>
     <td style="vertical-align: middle;">
-      Semana 10
+      Semana 9
     </td>
     <td style="vertical-align: middle;">
       15%
