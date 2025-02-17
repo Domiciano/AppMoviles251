@@ -293,6 +293,22 @@ En el <a href="https://github.com/Domiciano/AppMoviles251/tree/main/Laboratorios
       10%
     </td>
   </tr>
+
+   <tr>
+    <td>
+      Modelo de base de datos
+    </td>
+    <td>
+      Semana 5
+    </td>
+    <td style="vertical-align: middle;">
+      Semana 7
+    </td>
+    <td style="vertical-align: middle;">
+      15%
+    </td>
+  </tr>
+  
   <tr>
     <td>
       Prototipo de la aplicación
@@ -308,20 +324,7 @@ En el <a href="https://github.com/Domiciano/AppMoviles251/tree/main/Laboratorios
     </td>
   </tr>
 
-  <tr>
-    <td>
-      Modelo de base de datos
-    </td>
-    <td>
-      Semana 5
-    </td>
-    <td style="vertical-align: middle;">
-      Semana 7
-    </td>
-    <td style="vertical-align: middle;">
-      15%
-    </td>
-  </tr>
+ 
 
   <tr>
     <td>
