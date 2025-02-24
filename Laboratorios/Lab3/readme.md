@@ -6,6 +6,11 @@ El objetivo de este laboratorio es experimentar el funcionamiento de los ViewMod
 </p>
 
 
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Domiciano/AppMoviles251/refs/heads/main/res/images/Lab3Image6.png" width="512" />
+</p>
+
+
 ## Icesi Music strikes back
 
 Vamos a retomar el trabajo anterior donde definimos el esquema de navegación. Ahora tendrá que usar la capa de ViewModel y modelar los estados propios para las pantallas. Además tendrá que recordar cómo hacer paso de parámetros entre pantallas para lograr un flujo de información que posibilte el almacenamiento de los datos que se crean en la aplicación.<br><br>
