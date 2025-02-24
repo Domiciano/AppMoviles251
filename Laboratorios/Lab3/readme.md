@@ -7,7 +7,7 @@ El objetivo de este laboratorio es experimentar el funcionamiento de los ViewMod
 
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Domiciano/AppMoviles251/refs/heads/main/res/images/Lab3Image8.png" width="512" />
+  <img src="https://raw.githubusercontent.com/Domiciano/AppMoviles251/refs/heads/main/res/images/Lab3Image7.png" width="512" />
 </p>
 
 
