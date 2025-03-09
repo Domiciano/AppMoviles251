@@ -95,6 +95,7 @@ Considere esta estructura de carpetas
 │   │   │   ├── 📂 screens  
 ├── 📂 domain  
 │   ├── 📂 model
+│   ├── 📄 MainActivity.kt
 ```
 
 Cree el `ViewModel` donde modele las variables que serán visibles.
