@@ -44,20 +44,6 @@ donde usted puede cambiar eminem por lo que usted requiera buscar. El API de Dee
 }
 ```
 
-Us
-
-
-
-```kotlin
-class RetrofitConfiguration {
-    companion object {
-        var retrofit: Retrofit = Retrofit.Builder()
-            .baseUrl("https://facelogprueba.firebaseio.com")
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
-    }
-}
-```
 
 # Vista
 
@@ -108,4 +94,19 @@ Instale la dependencia de Retrofit
 val retrofitVersion = "2.11.0"
 implementation("com.squareup.retrofit2:retrofit:$retrofitVersion")
 implementation("com.squareup.retrofit2:converter-gson:$retrofitVersion")
+```
+
+
+
+
+
+```kotlin
+class RetrofitConfiguration {
+    companion object {
+        var retrofit: Retrofit = Retrofit.Builder()
+            .baseUrl("https://facelogprueba.firebaseio.com")
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+    }
+}
 ```
