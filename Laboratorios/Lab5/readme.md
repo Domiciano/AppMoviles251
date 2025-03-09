@@ -182,17 +182,39 @@ implementation("com.squareup.retrofit2:retrofit:$retrofitVersion")
 implementation("com.squareup.retrofit2:converter-gson:$retrofitVersion")
 ```
 
-
-
+Una vez tengamos retrofit, podemos crear un objeto de configuration en la ruta `configuration/RetrofitConfiguration.kt`
 
 
 ```kotlin
-class RetrofitConfiguration {
-    companion object {
-        var retrofit: Retrofit = Retrofit.Builder()
-            .baseUrl("https://facelogprueba.firebaseio.com")
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
-    }
+object RetrofitConfiguration {
+    var deezerRetrofit: Retrofit = Retrofit.Builder()
+        .baseUrl("https://api.deezer.com/")
+        .addConverterFactory(GsonConverterFactory.create())
+        .build()
 }
 ```
+
+El `object` es un descriptor de clase tipo Singleton en Kotlin.
+
+Una vez con el objeto `deezerRetrofit`, podemos hacer clases de acceso a datos, que Retrofit establece como `Services`. En nuestro caso son `DataSources`.
+
+```kotlin
+interface SearchService {
+    @GET("/search")
+    suspend fun search(@Query("q") query: String): DTOClass
+}
+```
+
+Aquí, las `suspend` functions, son funciones que sólo pueden ejecutarse dentro de una `corutina`
+
+Finalmente, cuando tenga definido su acceso a datos, puede inyectarlo como dependencia en la clase de tipo repository
+
+```kotlin
+class RepositoryClass(
+    private val searchService: SearchService = RetrofitConfiguration.deezerRetrofit.create(SearchService::class.java)
+) {
+...
+}
+```
+
+Con esta inyección, ya está lista para obtener elementos de tipo `DTOClass` acorde a su problema
