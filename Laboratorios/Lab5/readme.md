@@ -79,6 +79,22 @@ Este modelo está creado a propósito para que entienda la distinción entre un 
 
 # Capas
 
+Considere esta estructura de carpetas
+
+📂 project  
+├── 📂 features  
+│   ├── 📂 musicSearch
+│   │   ├── 📂 data  
+│   │   │   ├── 📂 repositories  
+│   │   │   ├── 📂 dataSources  
+│   │   ├── 📂 ui  
+│   │   │   ├── 📂 viewModel  
+│   │   │   ├── 📂 components  
+│   │   │   ├── 📂 screens  
+├── 📂 domain  
+│   ├── 📂 model
+
+
 Cree el `ViewModel` donde modele las variables que serán visibles.
 
 Cree el `Repository` donde usará el `DataSource` y resolverá la recepción de datos y respectiva transformación para darle los datos que requere la cada de `ViewModel`
