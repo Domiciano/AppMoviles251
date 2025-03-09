@@ -81,6 +81,7 @@ Este modelo está creado a propósito para que entienda la distinción entre un 
 
 Considere esta estructura de carpetas
 
+```
 📂 project  
 ├── 📂 features  
 │   ├── 📂 musicSearch
@@ -93,7 +94,7 @@ Considere esta estructura de carpetas
 │   │   │   ├── 📂 screens  
 ├── 📂 domain  
 │   ├── 📂 model
-
+```
 
 Cree el `ViewModel` donde modele las variables que serán visibles.
 
