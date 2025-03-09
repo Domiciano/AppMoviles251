@@ -171,6 +171,9 @@ class HTTPUtil {
 }
 ```
 
+# Resultado esperado
+
+Se espera que el usuario pueda buscar una canción en Deezer y que los resultados de búsqueda se puedan observar mediente una lista. Puede incluir la fotografía del album o la fotografía del artista que Deezer provee, además claro del nombre de la canción, el nombre del artista y el nombre del album
 
 # Instalación de dependencias de Retrofit
 
