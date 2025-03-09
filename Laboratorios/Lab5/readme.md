@@ -47,7 +47,7 @@ donde usted puede cambiar eminem por lo que usted requiera buscar. El API de Dee
 
 # Vista
 
-No saque todo su arsenal de components de Jetpack Compose, sólo use el %1 de su poder, para crear la vista mínima necesaria para crear una pantalla para este laboratorio.
+No saque todo su arsenal de components de Jetpack Compose, sólo use el %1 de su poder para crear la vista mínima necesaria para crear una pantalla para este laboratorio.
 
 La pantalla se debe componer de un campo de texto donde el usuario podrá escribir lo que busca
 
