@@ -105,6 +105,73 @@ Cree el `Repository` donde usará el `DataSource` y resolverá la recepción de 
 Cree el `DataSource` donde hará el llamado HTTP al API de Deezer usando como entrada el string búsqueda.
 
 
+# Utilidades para HTTP
+
+Puede hacer uso de esta clase de utilidades, pero tenga en cuenta que evolucionaremos para luego usar `Retrofit`
+
+```kotlin
+import java.net.URL
+import javax.net.ssl.HttpsURLConnection
+
+class HTTPUtil {
+    fun GETRequest(url: String): String {
+        val url = URL(url)
+        val client = url.openConnection() as HttpsURLConnection
+        client.requestMethod = "GET"
+        return client.inputStream.bufferedReader().readText()
+    }
+
+    fun PUTRequest(url: String, json: String): String {
+        val url = URL(url)
+        val client = url.openConnection() as HttpsURLConnection
+        client.requestMethod = "PUT"
+        client.setRequestProperty("Content-Type", "application/json")
+        client.doOutput = true
+        client.outputStream.bufferedWriter().use {
+            it.write(json)
+            it.flush()
+        }
+        return client.inputStream.bufferedReader().readText()
+    }
+
+    fun POSTRequest(url: String, json: String): String {
+        val url = URL(url)
+        val client = url.openConnection() as HttpsURLConnection
+        client.requestMethod = "POST"
+        client.setRequestProperty("Content-Type", "application/json")
+        client.doOutput = true
+        client.outputStream.bufferedWriter().use {
+            it.write(json)
+            it.flush()
+        }
+        return client.inputStream.bufferedReader().readText()
+    }
+
+    fun PATCHRequest(url: String, json: String): String {
+        val url = URL(url)
+        val client = url.openConnection() as HttpsURLConnection
+        client.requestMethod = "PATCH"
+        client.setRequestProperty("Content-Type", "application/json")
+        client.doOutput = true
+        client.outputStream.bufferedWriter().use {
+            it.write(json)
+            it.flush()
+        }
+        return client.inputStream.bufferedReader().readText()
+    }
+
+
+    fun DELETERequest(url: String): String {
+        val url = URL(url)
+        val client = url.openConnection() as HttpsURLConnection
+        client.requestMethod = "DELETE"
+        return client.inputStream.bufferedReader().readText()
+    }
+
+}
+```
+
+
 # Instalación de dependencias de Retrofit
 
 Instale la dependencia de Retrofit
