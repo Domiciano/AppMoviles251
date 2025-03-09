@@ -87,7 +87,8 @@ Considere esta estructura de carpetas
 │   ├── 📂 musicSearch
 │   │   ├── 📂 data  
 │   │   │   ├── 📂 repositories  
-│   │   │   ├── 📂 dataSources  
+│   │   │   ├── 📂 dataSources
+│   │   │   ├── 📂 dto 
 │   │   ├── 📂 ui  
 │   │   │   ├── 📂 viewModel  
 │   │   │   ├── 📂 components  
