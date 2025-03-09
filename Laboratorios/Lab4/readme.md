@@ -44,6 +44,9 @@ donde usted puede cambiar eminem por lo que usted requiera buscar. El API de Dee
 }
 ```
 
+Este objeto debería ser modelado para ser recibido por la aplicación en la capa de DataSource.
+
+En lugar de enviar el String puro a la capa de Repository, envie un TrackDTO
 
 # Vista
 
