@@ -44,19 +44,20 @@ donde usted puede cambiar eminem por lo que usted requiera buscar. El API de Dee
 }
 ```
 
-Este objeto debería ser modelado para ser recibido por la aplicación en la capa de DataSource.
+🎯 Este objeto debería ser modelado para poder ser recibido por la aplicación en la capa de `DataSource`. El modelo de este mensaje tiene la definición de DTO.
 
-En lugar de enviar el String puro a la capa de Repository, envie un TrackDTO
+🎯 La capa de `DataSource` emite valores a la capa `Repository`. Emita un DTO a la capa de `Repository`.
+
 
 # Vista
 
 No saque todo su arsenal de components de Jetpack Compose, sólo use el %1 de su poder para crear la vista mínima necesaria para crear una pantalla para este laboratorio.
 
-La pantalla se debe componer de un campo de texto donde el usuario podrá escribir lo que busca
+🎯 La pantalla se debe componer de un campo de texto donde el usuario podrá escribir lo que busca
 
-Tendrá un botón que permitirá realizar la búsqueda
+🎯 Debe tener un botón que permitirá realizar la búsqueda
 
-Y tendrá un LazyColumn para representar los resultados de la búsqueda.
+🎯 Debe tener un LazyColumn para representar los resultados de la búsqueda.
 
 # Modelo
 
@@ -78,11 +79,13 @@ data class Track(
 )
 ```
 
+🎯 Cree la clase de modelo
+
 Este modelo está creado a propósito para que entienda la distinción entre un modelo de transporte (DTO) y un modelo de dominio
 
 # Capas
 
-Considere esta estructura de carpetas
+🎯 Considere esta estructura de carpetas
 
 ```
 📂 project  
@@ -101,11 +104,11 @@ Considere esta estructura de carpetas
 │   ├── 📄 MainActivity.kt
 ```
 
-Cree el `ViewModel` donde modele las variables que serán visibles.
+🎯 Cree el `ViewModel` donde modele las variables que serán visibles.
 
-Cree el `Repository` donde usará el `DataSource` y resolverá la recepción de datos y respectiva transformación para darle los datos que requere la cada de `ViewModel`
+🎯 Cree el `Repository` donde usará el `DataSource` y resolverá la recepción de datos y respectiva transformación para darle los datos que requere la cada de `ViewModel`
 
-Cree el `DataSource` donde hará el llamado HTTP al API de Deezer usando como entrada el string búsqueda.
+🎯 Cree el `DataSource` donde hará el llamado HTTP al API de Deezer usando como entrada el string búsqueda.
 
 
 # Utilidades para HTTP
@@ -173,6 +176,8 @@ class HTTPUtil {
 
 }
 ```
+
+🎯 Consuma los datos del API y muestre el resultado en la capa de la vista
 
 # Resultado esperado
 
