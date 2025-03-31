@@ -1,10 +1,14 @@
-# Instalación
+# Directus + PostgreSQL
 
-Cree un archivo llamado `docker-compose.yml` con el siguiente contenido
+Este repositorio proporciona una configuración lista para usar de Directus con PostgreSQL utilizando Docker Compose.
+
+## Instalación
+
+1. Cree un archivo llamado `docker-compose.yml` con el siguiente contenido:
+
 ```yml
 version: "3"
 services:
-
   db:
     image: postgres:17
     environment:
@@ -25,7 +29,7 @@ services:
   directus:
     image: directus/directus:11.5.0
     ports:
-      - 8055:8055
+      - "8055:8055"
     volumes:
       - directus_database:/directus/database
       - directus_uploads:/directus/uploads
@@ -53,13 +57,15 @@ volumes:
   directus_extensions:
 ```
 
-Luego ejecute el siguiente comando para hacer startup solo de la base de datos.
+2. Inicie solo la base de datos:
+
 ```bash
 docker-compose up db -d
 ```
 
-# Preparación del modelo de datos
-Usted debe diseñar el modelo de datos para que corra en la base de datos de Postgres. Por ejemplo suponga que tiene este modelo en un archivo llamado `model.sql`
+## Preparación del modelo de datos
+
+Debe definir un modelo de datos para PostgreSQL. Ejemplo:
 
 ```sql
 CREATE TABLE Movie (
@@ -84,344 +90,99 @@ CREATE TABLE MovieActor (
 );
 ```
 
-Luego puede copiar su modelo al contenedor por medio de
+3. Copie el modelo de datos al contenedor:
 
-```
-docker cp model.sql container_name:/model.sql                            
-```
-
-Luego debe ejecutar ese modelo en el contenedor por medio de 
-
-```
-docker exec -it container_name psql -U directus -d directus -f /model.sql
+```bash
+docker cp model.sql <container_name>:/model.sql
 ```
 
-Donde `container_name` es el nombre del contenedor de base de datos. Puede verificar el nombre del container usando
+4. Ejecute el script dentro del contenedor:
 
+```bash
+docker exec -it <container_name> psql -U directus -d directus -f /model.sql
 ```
+
+**Nota:** Reemplace `<container_name>` por el nombre del contenedor de la base de datos. Para verificarlo, use:
+
+```bash
 docker ps
 ```
 
+## Autenticación
 
-# Authentication
+### 🔹 Inicio de sesión
 
-> [!NOTE]  
-> **Login de usuarios**
+- **URL:** `http://localhost:8055/auth/login`
+- **Método:** `POST`
+- **Headers:** `Content-Type: application/json`
+- **Body:**
+  
+  ```json
+  {
+      "email": "domic.rincon@gmail.com",
+      "password": "alfabeta"
+  }
+  ```
 
-> URL
-```
-http://localhost:8055/auth/login
-```
-> Method
-```bash
-POST
-```
-> Headers
-```
-Content-Type: application/json
-```
-> Body
-```json
-{
-    "email": "domic.rincon@gmail.com",
-    "password": "alfabeta"
-}
-```
-> Expected response
-```json
-{
-    "data": {
-        "expires": 900000,
-        "refresh_token": "xXRxYMc81m3dgnrbx2t26Ob_-4IBTSOovFuH1fAT_XFtw3n5U-q3ZQ-7iYGSrtYL",
-        "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjdkMTc4YmJlLWRjOWYtNGVkMy04MDg4LWY2OTJiMzMzYzljZCIsInJvbGUiOiIzMzFjOTAyOC1lM2Q0LTRhYTQtOTc0Mi00ZDNkMGQwOWQ4ZjMiLCJhcHBfYWNjZXNzIjp0cnVlLCJhZG1pbl9hY2Nlc3MiOnRydWUsImlhdCI6MTczNzU2MTA2NywiZXhwIjoxNzM3NTYxOTY3LCJpc3MiOiJkaXJlY3R1cyJ9.b4H9LXOdaqh2nhoJU3i2QCA-N0C0CbIYV1NgpCWBvuE"
-    }
-}
-```
+### 🔹 Registro de un rol
 
-> [!NOTE]  
-> **Registro de un rol**
-> Para usar este endpoint debe tener permisos de Administrador. Pero puede ir a definirlo en la consola de administrador en http://localhost:8055/admin/settings/roles.
+- **URL:** `http://localhost:8055/roles`
+- **Método:** `POST`
+- **Headers:** `Authorization: Bearer <Admin Access Token>`
+- **Body:**
+  
+  ```json
+  {
+      "name": "Application User"
+  }
+  ```
 
-> URL
-```
-http://localhost:8055/roles
-```
-> Method
-```
-POST
-```
-> Headers
-```
-Authorization: Bearer <Admin Access Token>
-```
-> Body
-```json
-{
-    "name": "Application User"
-}
-```
-> Expected response
-```json
-{
-    "data": {
-        "id": "003e5737-775e-46ce-8acc-dc2204831898",
-        "name": "Application User",
-        "icon": "supervised_user_circle",
-        "description": null,
-        "parent": null,
-        "children": [],
-        "users": []
-    }
-}
-```
+### 🔹 Registro de usuario
 
-> [!NOTE]  
-> **Registro de usuarios**
+- **URL:** `http://localhost:8055/users`
+- **Método:** `POST`
+- **Headers:** `Content-Type: application/json`
+- **Body:**
+  
+  ```json
+  {
+    "email": "a@a.com",
+    "password": "contraseñaSegura123",
+    "first_name": "Bob",
+    "last_name": "Dylan",
+    "role":"17553a15-e2bb-4afc-8144-066eeec8930c"
+  }
+  ```
 
-> URL
-```
-http://localhost:8055/users
-```
-> Method
-```bash
-POST
-```
+### 🔹 Obtener usuarios
 
-> Headers
-```
-Content-Type: application/json
-```
-> Body
-```json
-{
-  "email": "a@a.com",
-  "password": "contraseñaSegura123",
-  "first_name": "Bob",
-  "last_name": "Dylan",
-  "role":"17553a15-e2bb-4afc-8144-066eeec8930c"
-}
-```
+- **URL:** `http://localhost:8055/users`
+- **Método:** `GET`
+- **Headers:** `Authorization: Bearer <Admin Access Token>`
 
-> Expected response
+### 🔹 Obtener usuario actual
 
-```json
-{
-    "data": {
-        "id": "4f7406c5-4c74-421e-8e74-715a1f0e9894",
-        "first_name": "Nuevo",
-        "last_name": "Usuario",
-        "email": "a@a.com",
-        "password": "**********",
-        "location": null,
-        "title": null,
-        "description": null,
-        "tags": null,
-        "avatar": null,
-        "language": null,
-        "tfa_secret": null,
-        "status": "active",
-        "role": "331c9028-e3d4-4aa4-9742-4d3d0d09d8f3",
-        "token": null,
-        "last_access": null,
-        "last_page": null,
-        "provider": "default",
-        "external_identifier": null,
-        "auth_data": null,
-        "email_notifications": true,
-        "appearance": null,
-        "theme_dark": null,
-        "theme_light": null,
-        "theme_light_overrides": null,
-        "theme_dark_overrides": null
-    }
-}
-```
+- **URL:** `http://localhost:8055/users/me`
+- **Método:** `GET`
+- **Headers:** `Authorization: Bearer <User Access Token>`
 
-> [!NOTE]  
-> **Obtener usuarios**
+### 🔹 Obtener permisos
 
-Para esto se requiere autorizaciones, por defecto sólo los administradores pueden consultar la lista de usuarios
-> URL
-```
-http://localhost:8055/users
-```
-> Method
-```bash
-GET
-```
-> Expected Response
-```json
-{
-    "data": [
-        {
-            "id": "7d178bbe-dc9f-4ed3-8088-f692b333c9cd",
-            "first_name": "Admin",
-            "last_name": "User",
-            "email": "domic.rincon@gmail.com",
-            "password": "**********",
-            "location": null,
-            "title": null,
-            "description": null,
-            "tags": null,
-            "avatar": null,
-            "language": null,
-            "tfa_secret": null,
-            "status": "active",
-            "role": "331c9028-e3d4-4aa4-9742-4d3d0d09d8f3",
-            "token": null,
-            "last_access": "2025-01-23T15:22:04.750Z",
-            "last_page": "/settings/roles",
-            "provider": "default",
-            "external_identifier": null,
-            "auth_data": null,
-            "email_notifications": true,
-            "appearance": null,
-            "theme_dark": null,
-            "theme_light": null,
-            "theme_light_overrides": null,
-            "theme_dark_overrides": null
-        }
-    ]
-}
-```
+- **URL:** `http://localhost:8055/permissions/me`
+- **Método:** `GET`
+- **Headers:** `Authorization: Bearer <User Access Token>`
 
+### 🔹 Obtener rol por ID
 
-> [!NOTE]  
-> **Obtener mi usuario**
+- **URL:** `http://localhost:8055/roles/<Role UUID>`
+- **Método:** `GET`
 
-> URL
-```
-http://localhost:8055/users/me
-```
-> Method
-```bash
-GET
-```
-> Headers
-```
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjdkMTc4YmJlLWRjOWYtNGVkMy04MDg4LWY2OTJiMzMzYzljZCIsInJvbGUiOiIzMzFjOTAyOC1lM2Q0LTRhYTQtOTc0Mi00ZDNkMGQwOWQ4ZjMiLCJhcHBfYWNjZXNzIjp0cnVlLCJhZG1pbl9hY2Nlc3MiOnRydWUsImlhdCI6MTczNzU1OTM5MSwiZXhwIjoxNzM3NTYwMjkxLCJpc3MiOiJkaXJlY3R1cyJ9.vmBn93HKk7dhlkZRRzIsyMabl0QFItWRMxWyB3dAmR4
-```
+## 📌 Notas finales
 
-> Expected response
-```json
-{
-    "data": {
-        "id": "7d178bbe-dc9f-4ed3-8088-f692b333c9cd",
-        "first_name": "Admin",
-        "last_name": "User",
-        "email": "domic.rincon@gmail.com",
-        "password": "**********",
-        "location": null,
-        "title": null,
-        "description": null,
-        "tags": null,
-        "avatar": null,
-        "language": null,
-        "tfa_secret": null,
-        "status": "active",
-        "role": "331c9028-e3d4-4aa4-9742-4d3d0d09d8f3",
-        "token": null,
-        "last_access": "2025-01-23T15:33:18.768Z",
-        "last_page": "/settings/roles",
-        "provider": "default",
-        "external_identifier": null,
-        "auth_data": null,
-        "email_notifications": true,
-        "appearance": null,
-        "theme_dark": null,
-        "theme_light": null,
-        "theme_light_overrides": null,
-        "theme_dark_overrides": null,
-        "policies": []
-    }
-}
-```
+- Asegúrese de cambiar las credenciales y secretos antes de desplegar en producción.
+- Para más configuraciones, visite la documentación oficial de [Directus](https://docs.directus.io/).
 
-
-> [!NOTE]  
-> **Obtener mis permisos**
-
-> URL
-```
-http://localhost:8055/permissions/me
-```
-> Method
-```bash
-GET
-```
-> Headers
-```
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI3YWUyMjJkLWRmNjItNDA5ZC1hNDEzLTM5M2ZlNTJkNTNkMCIsInJvbGUiOiIxNzU1M2ExNS1lMmJiLTRhZmMtODE0NC0wNjZlZWVjODkzMGMiLCJhcHBfYWNjZXNzIjpmYWxzZSwiYWRtaW5fYWNjZXNzIjpmYWxzZSwiaWF0IjoxNzM3MTQ2NzI4LCJleHAiOjE3MzcxNDc2MjgsImlzcyI6ImRpcmVjdHVzIn0.Iwi-FHU5GkubYR5khmBR30acXhU2P01eyaAXWnclcl4
-```
-
-> Expected response
-```json
-{
-    "data": {
-        "post": {
-            "create": {
-                "access": "full",
-                "fields": [
-                    "*"
-                ]
-            },
-            "read": {
-                "access": "full",
-                "fields": [
-                    "*"
-                ]
-            },
-            "update": {
-                "access": "full",
-                "fields": [
-                    "*"
-                ]
-            },
-            "delete": {
-                "access": "full",
-                "fields": [
-                    "*"
-                ]
-            },
-            "share": {
-                "access": "full",
-                "fields": [
-                    "*"
-                ]
-            }
-        }       
-    }
-}
-```
-
-> [!NOTE]  
-> **Obtener rol por ID**
-
-> URL
-```
-http://localhost:8055/roles/<Role UUID>
-```
-> Method
-```bash
-GET
-```
-> Expected response
-```json
-{
-    "data": {
-        "id": "331c9028-e3d4-4aa4-9742-4d3d0d09d8f3",
-        "name": "Administrator",
-        "icon": "verified",
-        "description": "$t:admin_description",
-        "parent": null,
-        "children": [],
-        "users": [
-            "7d178bbe-dc9f-4ed3-8088-f692b333c9cd"
-        ]
-    }
-}
-```
-
+---
 
 # Data
 
