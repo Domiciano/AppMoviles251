@@ -84,10 +84,16 @@ CREATE TABLE MovieActor (
 );
 ```
 
-Luego puede copiar su modelo por medio de
+Luego puede copiar su modelo al contenedor por medio de
 
 ```
 docker cp model.sql container_name:/model.sql                            
+```
+
+Luego debe ejecutar ese modelo en el contenedor por medio de 
+
+```
+docker exec -it container_name psql -U directus -d directus -f /model.sql
 ```
 
 Donde `container_name` es el nombre del contenedor de base de datos. Puede verificar el nombre del container usando
