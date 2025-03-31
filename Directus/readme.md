@@ -16,6 +16,12 @@ services:
       - "5432:5432"
     volumes:
       - db_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U directus -d directus"]
+      interval: 10s
+      retries: 5
+      start_period: 10s
+      timeout: 5s
 
   directus:
     image: directus/directus:11.5.0
@@ -25,7 +31,6 @@ services:
       - directus_database:/directus/database
       - directus_uploads:/directus/uploads
       - directus_extensions:/directus/extensions
-    
     environment:
       SECRET: "alfabeta"
       ADMIN_EMAIL: "domic.rincon@gmail.com"
@@ -39,14 +44,8 @@ services:
       WEBSOCKETS_ENABLED: "true"
       ACCESS_TOKEN_TTL: "3600"
     depends_on:
-      - db
-    healthcheck:
-      test: ["CMD", "pg_isready", "-h", "db", "-p", "5432"]
-      interval: 10s
-      retries: 5
-      start_period: 5s
-      timeout: 5s
-
+      db:
+        condition: service_healthy
 
 volumes:
   db_data:
