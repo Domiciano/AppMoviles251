@@ -106,7 +106,7 @@ docker ps
 # Authentication
 
 > [!NOTE]  
-> Login
+> **Login de usuarios**
 
 > URL
 ```
@@ -139,10 +139,8 @@ Content-Type: application/json
 ```
 
 > [!NOTE]  
-> Registro de un rol
-
-
-Para usar este endpoint debe tener permisos de Administrador. Pero puede ir a definirlo en la consola de administrador en http://localhost:8055/admin/settings/roles.
+> **Registro de un rol**
+> Para usar este endpoint debe tener permisos de Administrador. Pero puede ir a definirlo en la consola de administrador en http://localhost:8055/admin/settings/roles.
 
 > URL
 ```
@@ -178,7 +176,7 @@ Authorization: Bearer <Admin Access Token>
 ```
 
 > [!NOTE]  
-> Registro de usuarios
+> **Registro de usuarios**
 
 > URL
 ```
@@ -240,7 +238,7 @@ Content-Type: application/json
 ```
 
 > [!NOTE]  
-> Obtener usuarios
+> **Obtener usuarios**
 
 Para esto se requiere autorizaciones, por defecto sólo los administradores pueden consultar la lista de usuarios
 > URL
@@ -289,7 +287,7 @@ GET
 
 
 > [!NOTE]  
-> Obtener mi usuario
+> **Obtener mi usuario**
 
 > URL
 ```
@@ -341,7 +339,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjdkMTc4YmJlL
 
 
 > [!NOTE]  
-> Obtener mis permisos
+> **Obtener mis permisos**
 
 > URL
 ```
@@ -397,7 +395,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI3YWUyMjJkL
 ```
 
 > [!NOTE]  
-> Obtener rol por ID
+> **Obtener rol por ID**
 
 > URL
 ```
