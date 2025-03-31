@@ -1,8 +1,7 @@
 # Instalación
 
-Cree un archivo llamado docker-compose.yml con el siguiente contenido
+Cree un archivo llamado `docker-compose.yml` con el siguiente contenido
 ```yml
-
 version: "3"
 services:
 
@@ -53,13 +52,50 @@ volumes:
   directus_uploads:
   directus_extensions:
 ```
+
 Luego ejecute el siguiente comando para hacer startup solo de la base de datos.
 ```bash
 docker-compose up db -d
 ```
 
 # Preparación del modelo de datos
-Usted debe diseñar el modelo de datos para que corra en la base de datos de Postgres. Puede usar un administrador GUI para insertar el modelo o por linea de comando accediendo al shel del contenedor
+Usted debe diseñar el modelo de datos para que corra en la base de datos de Postgres. Por ejemplo suponga que tiene este modelo en un archivo llamado `model.sql`
+
+```sql
+CREATE TABLE Movie (
+    id SERIAL PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    year INT,
+    genre VARCHAR(100)
+);
+
+CREATE TABLE Actor (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    nationality VARCHAR(100)
+);
+
+CREATE TABLE MovieActor (
+    movie_id INT NOT NULL,
+    actor_id INT NOT NULL,
+    PRIMARY KEY (movie_id, actor_id),
+    FOREIGN KEY (movie_id) REFERENCES Movie(id) ON DELETE CASCADE,
+    FOREIGN KEY (actor_id) REFERENCES Actor(id) ON DELETE CASCADE
+);
+```
+
+Luego puede copiar su modelo por medio de
+
+```
+docker cp model.sql container_name:/model.sql                            
+```
+
+Donde `container_name` es el nombre del contenedor de base de datos. Puede verificar el nombre del container usando
+
+```
+docker ps
+```
+
 
 # Authentication
 
