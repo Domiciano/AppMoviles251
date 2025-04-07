@@ -37,3 +37,12 @@ En este laboratorio aprenderás a consumir una Rest API en Android, utilizando e
 <p align="center">
 <a href="https://github.com/Domiciano/AppMoviles251/tree/main/Laboratorios/Lab4"><img src="https://raw.githubusercontent.com/Domiciano/AppMoviles251/refs/heads/main/res/images/Lab4Cover.png" width="386"></a><br>
 </p>
+
+# <a href="https://github.com/Domiciano/AppMoviles251/tree/main/Laboratorios/Lab5">Laboratorio 5. Authentication</a>
+<p>
+En este laboratorio haremos lo básico de autenticación
+</p>
+
+<p align="center">
+<a href="https://github.com/Domiciano/AppMoviles251/tree/main/Laboratorios/Lab5"><img src="https://raw.githubusercontent.com/Domiciano/AppMoviles251/refs/heads/main/res/images/Lab5Cover.png" width="386"></a><br>
+</p>
