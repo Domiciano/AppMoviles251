@@ -276,6 +276,52 @@ val profileFlow = context.dataStore.data.map { prefs ->
 ```
 
 
+# DataStore
+
+En el top level de la app, defina
+```kotlin
+val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "appvariables")
+```
+
+Realicemos un singleton para acceder a la memoria
+
+```kotlin
+object LocalDataSourceProvider {
+
+    private var instance: LocalDataSource? = null
+
+    fun init(context: Context) {
+        if (instance == null) {
+            instance = LocalDataSource(context.applicationContext.dataStore)
+        }
+    }
+
+    fun get(): LocalDataSource {
+        return instance ?: throw IllegalStateException("LocalDataSource not initialized. Call LocalDataSourceProvider.init(context) first.")
+    }
+}
+```
+
+Donde el `LocalDataSource` es 
+
+```kotlin
+class LocalDataSource(private val dataStore: DataStore<Preferences>) {
+
+    suspend fun saveProfile(key: String, value: String) {
+        dataStore.edit { prefs ->
+            prefs[stringPreferencesKey(key)] = value
+        }
+    }
+
+    fun getProfile(key: String): Flow<String> = dataStore.data.map { prefs ->
+        prefs[stringPreferencesKey(key)] ?: ""
+    }
+}
+```
+
+
+
+
 # Configurar expiracion de token
 
 El tiempo de expiración del token se cambia usando una variable de entorno que puede agregar en su `docker-compose.yml
