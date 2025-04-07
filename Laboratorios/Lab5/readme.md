@@ -97,12 +97,10 @@ Luego cree su tabla
 ```sql
 CREATE TABLE user_profile (
     id SERIAL PRIMARY KEY,
-    usuario_id UUID UNIQUE REFERENCES directus_users(id) ON DELETE CASCADE,
-    direccion TEXT,
-    telefono TEXT,
-    fecha_nacimiento DATE,
-    created_at TIMESTAMP DEFAULT NOW(),
-    updated_at TIMESTAMP DEFAULT NOW()
+    user_id UUID UNIQUE REFERENCES directus_users(id) ON DELETE CASCADE,
+    address TEXT,
+    phone TEXT,
+    birthdate DATE
 );
 ```
 
