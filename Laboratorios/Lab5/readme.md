@@ -1,4 +1,17 @@
+
+
+```kotlin
+    implementation("androidx.datastore:datastore-preferences:1.1.4");
+    implementation("com.google.code.gson:gson:2.12.1")
+    implementation("androidx.navigation:navigation-compose:2.7.7")
+    implementation("com.squareup.retrofit2:retrofit:2.11.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.11.0")
+```
+
+
 # Instalación
+
+
 
 1. Cree un archivo llamado `docker-compose.yml` con el siguiente contenido:
 
