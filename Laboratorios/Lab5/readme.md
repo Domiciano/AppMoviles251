@@ -56,7 +56,7 @@ volumes:
 2. Inicie solo la base de datos:
 
 ```bash
-docker-compose up db -d
+docker-compose up -d
 ```
 
 # Entrando a la base de datos
