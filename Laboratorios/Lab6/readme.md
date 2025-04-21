@@ -362,8 +362,6 @@ Y para ejecutarlo tengo este archivo `.sh`
 ```sh
 #!/bin/bash
 
-# Para hacer el proceso de inicialización desde docker puede usar este script
-
 # Nombre del contenedor
 CONTAINER_NAME="directusmoviles_db_1"
 
