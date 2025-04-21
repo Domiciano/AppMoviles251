@@ -100,6 +100,33 @@ CREATE TABLE product_categories (
 );
 ```
 
+Puede agregar datos asi
+
+```sql
+-- Insertar productos
+INSERT INTO products (name, price) VALUES
+('Camiseta Básica', 20000.00),
+('Zapatos Casual', 120000.00),
+('Mochila Escolar', 85000.00),
+('Gorra Deportiva', 35000.00),
+('Audífonos Bluetooth', 150000.00);
+
+-- Insertar categorías
+INSERT INTO categories (name) VALUES
+('Ropa'),
+('Calzado'),
+('Accesorios'),
+('Tecnología');
+
+-- Insertar asociaciones entre productos y categorías
+INSERT INTO products_categories (product_id, category_id) VALUES
+(1, 1),  -- Camiseta Básica - Ropa
+(2, 2),  -- Zapatos Casual - Calzado
+(3, 1),  -- Mochila Escolar - Ropa
+(4, 3),  -- Gorra Deportiva - Accesorios
+(5, 4);  -- Audífonos Bluetooth - Tecnología
+```
+
 # Referenciando tablas de directus
 
 Puede también construir tablas que se relaciones con las directus. Quizás la única que necesite sea `directus_users` para generar su propia tabla de `user_profile`. 
@@ -158,16 +185,35 @@ VALUES
   ((SELECT id FROM directus_users WHERE email = 'sandra@tienda.com'), 'Avenida Inventada 456, Ciudad', '555-5678', '1985-02-15');
 ```
 
-# Inserción de datos simple
+# Habilitar permisos de creación de usuario pública
+
 ```sql
--- Insertar productos, usando subconsultas para obtener el user_id
-INSERT INTO products (name, description, price)
-VALUES
-  ('Camiseta Básica', 'Camiseta de algodón blanca', 20000),
-  ('Zapatos Casual', 'Zapatos para uso diario', 120000),
-  ('Mochila Escolar', 'Mochila resistente para estudiantes', 85000),
-  ('Gorra Deportiva', 'Gorra para entrenamiento', 35000),
-  ('Audífonos Bluetooth', 'Audífonos inalámbricos con micrófono', 150000);
+INSERT INTO directus_permissions (
+    collection,
+    action,
+    fields,
+    policy
+) VALUES (
+    'directus_users',
+    'create',
+    '*',
+    (SELECT id FROM directus_policies WHERE name LIKE '%public_label%')
+);
+
+Además requerirá acceso público a los roles de la aplicación
+
+```sql
+INSERT INTO directus_permissions (
+    collection,
+    action,
+    fields,
+    policy
+) VALUES (
+    'directus_roles',
+    'read',
+    '*',
+    (SELECT id FROM directus_policies WHERE name LIKE '%public_label%')
+);
 ```
 
 
