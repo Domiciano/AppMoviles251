@@ -199,6 +199,7 @@ INSERT INTO directus_permissions (
     '*',
     (SELECT id FROM directus_policies WHERE name LIKE '%public_label%')
 );
+```
 
 Además requerirá acceso público a los roles de la aplicación
 
