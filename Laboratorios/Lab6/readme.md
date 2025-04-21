@@ -12,6 +12,8 @@ Directus leerá esto automáticamente y simplemente tendrá que ir a la consola 
 
 **Use las contraseñas de administrador para esta práctica**
 
+Puede ayudarse de https://sqliteonline.com/
+
 # Creando tablas simples
 Si requiere construir tablas que no tienen relación con ninguna otra tabla de su base de datos puede usar
 ```sql
