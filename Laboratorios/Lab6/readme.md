@@ -28,7 +28,7 @@ CREATE TABLE game_item_shop (
 
 En este caso dado que `created_at` tiene un valor por defecto, no es necesario nombrarlo al hacer la inserciones.
 
-```java
+```sql
 INSERT INTO game_item_shop (name, description, price)
 VALUES (
     'Espada de Fuego',
