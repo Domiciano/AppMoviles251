@@ -145,6 +145,16 @@ CREATE TABLE user_profile (
 );
 ```
 
+Si ya creó la tabla de perfiles, puede crear perfiles para cada usuario asi
+
+```sql
+-- Insertar perfiles
+INSERT INTO user_profile (user_id, address, phone, birthdate)
+VALUES
+  ((SELECT id FROM directus_users WHERE email = 'carlos@tienda.com'), 'Calle Ficticia 123, Ciudad', '555-1234', '1990-01-01'),
+  ((SELECT id FROM directus_users WHERE email = 'sandra@tienda.com'), 'Avenida Inventada 456, Ciudad', '555-5678', '1985-02-15');
+```
+
 # Creando roles iniciales
 
 ```sql
@@ -176,16 +186,7 @@ VALUES
     '22222222-2222-2222-2222-222222222222', 'active');
 ```
 
-# Tabla de perfiles
-Si ya creó la tabla de perfiles, puede crear perfiles para cada usuario asi
 
-```sql
--- Insertar perfiles
-INSERT INTO user_profile (user_id, address, phone, birthdate)
-VALUES
-  ((SELECT id FROM directus_users WHERE email = 'carlos@tienda.com'), 'Calle Ficticia 123, Ciudad', '555-1234', '1990-01-01'),
-  ((SELECT id FROM directus_users WHERE email = 'sandra@tienda.com'), 'Avenida Inventada 456, Ciudad', '555-5678', '1985-02-15');
-```
 
 # Habilitar permisos de creación de usuario pública
 
