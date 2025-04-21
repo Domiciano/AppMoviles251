@@ -17,7 +17,7 @@ Si requiere construir tablas que no tienen relación con ninguna otra tabla de s
 ```sql
 CREATE TABLE game_item_shop (
     id SERIAL PRIMARY KEY,
-    name VARCHAR(255) NOT NULL,
+    name TEXT NOT NULL,
     description TEXT,
     price DECIMAL(10, 2) NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
