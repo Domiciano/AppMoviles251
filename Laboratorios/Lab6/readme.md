@@ -355,6 +355,9 @@ INSERT INTO directus_permissions (
     '{}',
     '{}'
 );
+
+-- Aquí irían los CREATE TABLE del esquema
+
 ```
 
 Y para ejecutarlo tengo este archivo `.sh`
