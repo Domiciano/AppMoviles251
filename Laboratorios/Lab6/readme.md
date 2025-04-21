@@ -174,7 +174,7 @@ VALUES
   (gen_random_uuid(), 'Sandra Vendedora', 'sandra@tienda.com', '$argon2i$v=19$m=16,t=2,p=1$Qk4zb1RuWDJCcVRpb2JoSw$SzyC3tGEP6swGBt0TvBkiw', 
     (SELECT id FROM directus_roles WHERE name = 'Vendedor'), 'active');
 ```
-Donde `QfTIfUcdw0EVx5mKx6OqLONtdVx1hdp6Q5RQlQYQdMN6Q4nksf22i` es `1234` hasheado con **[Argon2](https://argon2.online/)**
+Donde `QfTIfUcdw0EVx5mKx6OqLONtdVx1hdp6Q5RQlQYQdMN6Q4nksf22i` es `12345678` hasheado con **[Argon2](https://argon2.online/)**
 
 Si tiene certeza de sus UUID también puede usar
 ```sql
@@ -301,11 +301,13 @@ https://directus.io/docs/api/items
 Este es mi `data.sql` con el que inicializo mi aplicación
 
 ```sql
+-- Creamos los roles con un UUID especifico
 INSERT INTO directus_roles (id, name, icon, description, parent) VALUES
   ('11111111-1111-1111-1111-111111111111', 'Comprador', 'supervised_user_circle', 'Usuario con permisos para comprar productos', NULL),
   ('22222222-2222-2222-2222-222222222222', 'Vendedor', 'supervised_user_circle', 'Usuario con permisos para vender productos', NULL);
 
 
+-- Creamos los usuarios para que puedan iniciar sesion
 INSERT INTO directus_users (id, first_name, email, password, role, status)
 VALUES
   (gen_random_uuid(), 'Carlos Comprador', 'carlos@tienda.com', '$argon2i$v=19$m=16,t=2,p=1$Qk4zb1RuWDJCcVRpb2JoSw$SzyC3tGEP6swGBt0TvBkiw', 
@@ -313,20 +315,7 @@ VALUES
   (gen_random_uuid(), 'Sandra Vendedora', 'sandra@tienda.com', '$argon2i$v=19$m=16,t=2,p=1$Qk4zb1RuWDJCcVRpb2JoSw$SzyC3tGEP6swGBt0TvBkiw', 
     '22222222-2222-2222-2222-222222222222', 'active');
 
-CREATE TABLE user_profile (
-    id SERIAL PRIMARY KEY,
-    user_id UUID UNIQUE REFERENCES directus_users(id) ON DELETE CASCADE,
-    address TEXT,
-    phone TEXT,
-    birthdate DATE
-);
-
-INSERT INTO user_profile (user_id, address, phone, birthdate)
-VALUES
-  ((SELECT id FROM directus_users WHERE email = 'carlos@tienda.com'), 'Calle Ficticia 123, Ciudad', '555-1234', '1990-01-01'),
-  ((SELECT id FROM directus_users WHERE email = 'sandra@tienda.com'), 'Avenida Inventada 456, Ciudad', '555-5678', '1985-02-15');
-
-
+-- Hacemos que la creacion sea publica
 INSERT INTO directus_permissions (
     collection,
     action,
@@ -343,6 +332,7 @@ INSERT INTO directus_permissions (
     '{}'
 );
 
+-- Hacemos publico el acceso a listar los roles
 INSERT INTO directus_permissions (
     collection,
     action,
@@ -359,8 +349,20 @@ INSERT INTO directus_permissions (
     '{}'
 );
 
--- Aquí irían los CREATE TABLE del esquema
+-- Aqui iria el esquema segun las reglas de negocio
 
+CREATE TABLE user_profile (
+    id SERIAL PRIMARY KEY,
+    user_id UUID UNIQUE REFERENCES directus_users(id) ON DELETE CASCADE,
+    address TEXT,
+    phone TEXT,
+    birthdate DATE
+);
+
+INSERT INTO user_profile (user_id, address, phone, birthdate)
+VALUES
+  ((SELECT id FROM directus_users WHERE email = 'carlos@tienda.com'), 'Calle Ficticia 123, Ciudad', '555-1234', '1990-01-01'),
+  ((SELECT id FROM directus_users WHERE email = 'sandra@tienda.com'), 'Avenida Inventada 456, Ciudad', '555-5678', '1985-02-15');
 ```
 
 Y para ejecutarlo tengo este archivo `.sh`
