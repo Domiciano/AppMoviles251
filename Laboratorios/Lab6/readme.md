@@ -192,12 +192,16 @@ INSERT INTO directus_permissions (
     collection,
     action,
     fields,
-    policy
+    policy,
+    permissions,
+    validation
 ) VALUES (
     'directus_users',
     'create',
     '*',
-    (SELECT id FROM directus_policies WHERE name LIKE '%public_label%')
+    (SELECT id FROM directus_policies WHERE name LIKE '%public_label%'),
+    '{}',
+    '{}'
 );
 ```
 
@@ -208,12 +212,16 @@ INSERT INTO directus_permissions (
     collection,
     action,
     fields,
-    policy
+    policy,
+    permissions,
+    validation
 ) VALUES (
     'directus_roles',
     'read',
     '*',
-    (SELECT id FROM directus_policies WHERE name LIKE '%public_label%')
+    (SELECT id FROM directus_policies WHERE name LIKE '%public_label%'),
+    '{}',
+    '{}'
 );
 ```
 
