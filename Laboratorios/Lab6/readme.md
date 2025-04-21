@@ -237,23 +237,3 @@ http://localhost:8055/items/comentarios?fields=id,autor,texto,publicacion_id.tit
 ```
 
 https://directus.io/docs/api/items
-
-
-# Almacenar el estado
-
-```sh
-pg_dump -U directus -d directus -F p -f backup_directus.sql
-```
-
-```sh
-docker cp directusmoviles_db_1:./backup_directus.sql .
-```
-
-
-```sh
-docker cp backup_directus.sql directusmoviles_db_1:.
-```
-
-```sh
-psql -U directus -d directus < backup_directus.sql
-```
