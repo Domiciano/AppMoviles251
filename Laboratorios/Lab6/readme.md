@@ -292,3 +292,68 @@ http://localhost:8055/items/comentarios?fields=id,autor,texto,publicacion_id.tit
 ```
 
 https://directus.io/docs/api/items
+
+# ANEXOS
+
+Este es mi `data.sql` con el que inicializo mi aplicación
+
+```sql
+INSERT INTO directus_roles (id, name, icon, description, parent) VALUES
+  ('11111111-1111-1111-1111-111111111111', 'Comprador', 'supervised_user_circle', 'Usuario con permisos para comprar productos', NULL),
+  ('22222222-2222-2222-2222-222222222222', 'Vendedor', 'supervised_user_circle', 'Usuario con permisos para vender productos', NULL);
+
+
+INSERT INTO directus_users (id, first_name, email, password, role, status)
+VALUES
+  (gen_random_uuid(), 'Carlos Comprador', 'carlos@tienda.com', '$argon2i$v=19$m=16,t=2,p=1$Qk4zb1RuWDJCcVRpb2JoSw$SzyC3tGEP6swGBt0TvBkiw', 
+    '11111111-1111-1111-1111-111111111111', 'active'),
+  (gen_random_uuid(), 'Sandra Vendedora', 'sandra@tienda.com', '$argon2i$v=19$m=16,t=2,p=1$Qk4zb1RuWDJCcVRpb2JoSw$SzyC3tGEP6swGBt0TvBkiw', 
+    '22222222-2222-2222-2222-222222222222', 'active');
+
+CREATE TABLE user_profile (
+    id SERIAL PRIMARY KEY,
+    user_id UUID UNIQUE REFERENCES directus_users(id) ON DELETE CASCADE,
+    address TEXT,
+    phone TEXT,
+    birthdate DATE
+);
+
+INSERT INTO user_profile (user_id, address, phone, birthdate)
+VALUES
+  ((SELECT id FROM directus_users WHERE email = 'carlos@tienda.com'), 'Calle Ficticia 123, Ciudad', '555-1234', '1990-01-01'),
+  ((SELECT id FROM directus_users WHERE email = 'sandra@tienda.com'), 'Avenida Inventada 456, Ciudad', '555-5678', '1985-02-15');
+
+
+INSERT INTO directus_permissions (
+    collection,
+    action,
+    fields,
+    policy,
+    permissions,
+    validation
+) VALUES (
+    'directus_users',
+    'create',
+    '*',
+    (SELECT id FROM directus_policies WHERE name LIKE '%public_label%'),
+    '{}',
+    '{}'
+);
+
+INSERT INTO directus_permissions (
+    collection,
+    action,
+    fields,
+    policy,
+    permissions,
+    validation
+) VALUES (
+    'directus_roles',
+    'read',
+    '*',
+    (SELECT id FROM directus_policies WHERE name LIKE '%public_label%'),
+    '{}',
+    '{}'
+);
+```
+
