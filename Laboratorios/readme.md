@@ -46,3 +46,8 @@ En este laboratorio haremos lo básico de autenticación
 <p align="center">
 <a href="https://github.com/Domiciano/AppMoviles251/tree/main/Laboratorios/Lab5"><img src="https://raw.githubusercontent.com/Domiciano/AppMoviles251/refs/heads/main/res/images/Lab5Cover.png" width="386"></a><br>
 </p>
+
+# <a href="https://github.com/Domiciano/AppMoviles251/tree/main/Laboratorios/Lab6">Laboratorio 6. Taller de construcción de base de datos</a>
+<p>
+En este laboratorio crearemos una primera versión de nuestra base de datos
+</p>
