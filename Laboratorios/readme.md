@@ -51,3 +51,9 @@ En este laboratorio haremos lo básico de autenticación
 <p>
 En este laboratorio crearemos una primera versión de nuestra base de datos
 </p>
+
+<p align="center">
+<a href="https://github.com/Domiciano/AppMoviles251/tree/main/Laboratorios/Lab6"><img src="https://www.creativefabrica.com/wp-content/uploads/2020/08/19/Vector-illustration-for-database-system-Graphics-5025911-1.jpg" width="386"></a><br>
+</p>
+
+
