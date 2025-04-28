@@ -473,28 +473,25 @@ Ahí los imprimimos para verificar. Vamos a verificar lo que llevamos de momento
 # Capas ViewModel + Repository
 
 ```kt
-import androidx.lifecycle.*
-import kotlinx.coroutines.*
-
-class ChatViewModel(
-    val chatRepository: ChatRepository = ChatRepository()
+class MessagesViewModel(
+    val chatRepository: MessagesRepository = MessagesRepository()
 ) : ViewModel() {
-    
+
     fun getLiveFlowOfProducts() {
         viewModelScope.launch(Dispatchers.IO) {
             chatRepository.observeMessages()
         }
     }
-    
+
 }
 
-class ChatRepository(
+class MessagesRepository(
     val liveProductsDataSource: MessagesLiveDataSource = MessagesLiveDataSource()
 ) : ViewModel() {
 
-    suspend fun observeMessages(){
+    fun observeMessages(){
         liveProductsDataSource.observeMessages()
     }
-    
+
 }
 ```
