@@ -530,11 +530,59 @@ El listener debería poder recibir el valor
 ```kt
 class MessagesWebSocketListener(
     val localDataSource: LocalDataSource = LocalDataSourceProvider.get(),
-    val flow: Flow<String>
+    val flow: MutableSharedFlow<String>
 ) : WebSocketListener() {
     ...
 }
 ```
 
+Una vez con el flow, puede emitir los valores. Por ejemplo
+
+```kt
+ else if (type == "subscription") {
+    Log.e(">>>", text)
+    runBlocking { flow.emit(text) }
+}
+```
+
+Aquí estamos exponiendo todo el mensaje. Ingeniéselas para emitir por separado cada mensajes
+
+Ahora vamos a las capas de abajo
+
+```kt
+class MessagesRepository(
+    val liveProductsDataSource: MessagesLiveDataSource = MessagesLiveDataSource()
+) : ViewModel() {
+
+    fun observeMessages(): Flow<String> {
+        return liveProductsDataSource.observeMessages()
+    }
+
+}
+```
+
+Ahora la función `observeMessages` retorna el flujo.
+
+Vamos con ViewModel
+
+```kt
+class MessagesViewModel(
+    val chatRepository: MessagesRepository = MessagesRepository()
+) : ViewModel() {
+
+    fun getLiveFlowOfProducts() {
+        viewModelScope.launch(Dispatchers.IO) {
+            chatRepository.observeMessages().collect{ message ->
+                Log.e(">>>", "Viewmodel: $message")
+            }
+        }
+    }
+
+}
+```
+
+Ahora el viewmodel hace el respectivo `collect` del flow. Debe ser en corutina.
+
+*Le toca a usted separar los datos y formar un MutableStateFlow* que pueda consumir la capa de la vista por medio del método `collectAsState`
 
 
