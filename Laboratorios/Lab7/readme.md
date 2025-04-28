@@ -319,11 +319,12 @@ Debemos abrir un websocket por query que requiramos observar. En el método de o
 
 
 ```kt
-class LiveProductsDataSource(
+import okhttp3.*
+import android.util.Log
+import org.json.JSONObject
 
-) {
-
-    suspend fun observeMessages() {
+class MessagesLiveDataSource() {
+    fun observeMessages() {
         val client = OkHttpClient()
         val request = Request.Builder()
             .url("wss://d791-186-112-68-24.ngrok-free.app/websocket")
@@ -381,7 +382,7 @@ override fun onMessage(webSocket: WebSocket, text: String) {
                 "type": "pong" 
             }
         """.trimIndent())
-        println("Respondido con pong")
+        Log.e(">>>","Respondido con pong")
     }
 }
 ```
@@ -391,7 +392,6 @@ Sencillito
 Ahora vamos con el mecanismo de autenticación
 
 
-
 # Mecanismo de autenticación
 
 Hay unos ingredientes más que debemos sumar. Por ejemplo, debemos tener token porque debemos implementar el mecanismo de autenticación.
@@ -399,44 +399,28 @@ Hay unos ingredientes más que debemos sumar. Por ejemplo, debemos tener token p
 Para lograrlo, debemos primero hacer uso del `LocalDataSource` ya que ahí está el token almacenado.
 
 ```kt
-class LiveMessagesDataSource(
+class MessagesWebSocketListener(
     val localDataSource: LocalDataSource = LocalDataSourceProvider.get(),
 ) {
     ...
 }
 ```
 
-Ahora, crear la instancia de `WebSocket` debería verse así
-
-```kt
-client.newWebSocket(
-    request,
-    ProductsWebSocketListener(token)
-)
-```
-
-De modo que nuestro Listener ahora depende del token
-
-```kt
-class ProductsWebSocketListener(
-    val token: String
-) : WebSocketListener() {
-    ...
-}
-```
-
-Finalmente, ya podemos enviar un mensaje de autenticación al websocket para poder empezar a pedir datos
+Con esto ya podemos enviar un mensaje de autenticación al websocket para poder empezar a pedir datos
 
 ```kt
 override fun onOpen(webSocket: WebSocket, response: Response) {
-    Log.e(">>>", "Connected");
-    val authMessage = """
+        Log.e(">>>", "Connected");
+
+        val token = runBlocking { localDataSource.load("accesstoken").first() }
+
+        val authMessage = """
         {
             "type":"auth", 
             "access_token":"$token"
         }
-    """.trimIndent()
-    webSocket.send(authMessage)
+        """.trimIndent()
+        webSocket.send(authMessage)
 }
 ```
 
