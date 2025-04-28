@@ -389,6 +389,39 @@ override fun onMessage(webSocket: WebSocket, text: String) {
 
 Sencillito
 
+
+# Probemos lo que llevamos
+
+Vamos a confirmar que nos podamos conectar con el websocket y demás. Para eso generemos ViewModel y Repository respectivos.
+
+*No olvide llamar al método getLiveFlowOfProducts desde la vista*
+
+```kt
+class MessagesViewModel(
+    val chatRepository: MessagesRepository = MessagesRepository()
+) : ViewModel() {
+
+    fun getLiveFlowOfProducts() {
+        viewModelScope.launch(Dispatchers.IO) {
+            chatRepository.observeMessages()
+        }
+    }
+
+}
+
+class MessagesRepository(
+    val liveProductsDataSource: MessagesLiveDataSource = MessagesLiveDataSource()
+) : ViewModel() {
+
+    fun observeMessages(){
+        liveProductsDataSource.observeMessages()
+    }
+
+}
+```
+
+
+
 Ahora vamos con el mecanismo de autenticación
 
 
@@ -468,30 +501,40 @@ override fun onMessage(webSocket: WebSocket, text: String) {
 
 Note que enviamos un `queryMessage`. El server nos enviará un primer mensaje de tipo `subscription` donde vendrán los primeros datos.
 
-Ahí los imprimimos para verificar. Vamos a verificar lo que llevamos de momento con una implementación del ViewModel y del Repository
+Ahí los imprimimos para verificar. Vamos a verificar lo que llevamos de momento con una implementación del ViewModel y del Repository.
 
-# Capas ViewModel + Repository
+# Manejando los flujos
+
+Ahora sí vamos a exponer la data a través de un flujo. Elijamos el tipo `MutableSharedFlow` para emitir valores a lo largo de las capas
 
 ```kt
-class MessagesViewModel(
-    val chatRepository: MessagesRepository = MessagesRepository()
-) : ViewModel() {
+class MessagesLiveDataSource() {
 
-    fun getLiveFlowOfProducts() {
-        viewModelScope.launch(Dispatchers.IO) {
-            chatRepository.observeMessages()
-        }
+    val messagesFlow = MutableSharedFlow<String>()
+    
+    fun observeMessages() : Flow<String> {
+        ...
+        client.newWebSocket(
+            request,
+            MessagesWebSocketListener(flow = messagesFlow)
+        )
+        return messagesFlow
     }
-
-}
-
-class MessagesRepository(
-    val liveProductsDataSource: MessagesLiveDataSource = MessagesLiveDataSource()
-) : ViewModel() {
-
-    fun observeMessages(){
-        liveProductsDataSource.observeMessages()
-    }
-
 }
 ```
+
+Note que creamos la variable global `messagesFlow` y luego la insertamos como dependencia en MessagesWebSocketListener. Dentro del listener usaremos el flujo para *emitir* los valores.
+
+El listener debería poder recibir el valor
+
+```kt
+class MessagesWebSocketListener(
+    val localDataSource: LocalDataSource = LocalDataSourceProvider.get(),
+    val flow: Flow<String>
+) : WebSocketListener() {
+    ...
+}
+```
+
+
+
