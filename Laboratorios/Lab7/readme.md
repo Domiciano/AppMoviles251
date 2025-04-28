@@ -468,4 +468,33 @@ override fun onMessage(webSocket: WebSocket, text: String) {
 
 Note que enviamos un `queryMessage`. El server nos enviará un primer mensaje de tipo `subscription` donde vendrán los primeros datos.
 
-Ahí los imprimimos para verificar
+Ahí los imprimimos para verificar. Vamos a verificar lo que llevamos de momento con una implementación del ViewModel y del Repository
+
+# Capas ViewModel + Repository
+
+```kt
+import androidx.lifecycle.*
+import kotlinx.coroutines.*
+
+class ChatViewModel(
+    val chatRepository: ChatRepository = ChatRepository()
+) : ViewModel() {
+    
+    fun getLiveFlowOfProducts() {
+        viewModelScope.launch(Dispatchers.IO) {
+            chatRepository.observeMessages()
+        }
+    }
+    
+}
+
+class ChatRepository(
+    val liveProductsDataSource: MessagesLiveDataSource = MessagesLiveDataSource()
+) : ViewModel() {
+
+    suspend fun observeMessages(){
+        liveProductsDataSource.observeMessages()
+    }
+    
+}
+```
