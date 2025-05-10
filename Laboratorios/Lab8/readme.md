@@ -26,19 +26,13 @@ https://github.com/Domiciano/MOV251Lab7
 ```kt
 @Composable
 fun ProfileScreen( ... ) {
-    
 	...
-
 	val imageURL by viewmodel.imageURL.collectAsState()
-
 	...
-
-
     Scaffold { innerPadding ->
         Column(modifier = Modifier.fillMaxSize().padding(innerPadding)) {
-            
 			AsyncImage(
-                model = imageURL,
+				model = imageURL,
                 contentDescription = "",
                 contentScale = ContentScale.Crop,
                 modifier = Modifier
@@ -50,7 +44,6 @@ fun ProfileScreen( ... ) {
             Button(onClick = { ... }) {
                 Text("Cambiar foto")
             }
-            
             
         }    
     }
@@ -198,7 +191,7 @@ val part = FileProvider.get().prepareMultipartFromUri(uri)
 
 En su capa lógica
 
-# Actualización de nombre
+# Edición de metadata de la foto
 
 Debe evitar que su fotografía se guarde con el nombre con el que está almacenada en su celular. La razón es que puede sufrir reemplazos de fotos inesperadas. Por esta razón debe usar el ID que devuelve el servicio.
 
@@ -243,7 +236,21 @@ La respuesta esperada es la misma que el endpoint de upload
 ```
 
 
+# Secuencia
+En su capa lógica debe tener los pasos
+
+- Subir la foto
+- Si fue exitoso, obtenda el `id` de la foto
+- Haga una edición de la metadata de la foto para que el `title` y `filename_download` sean iguales a `id`
 
 
+# Acceso a fotos
 
+Luego de esto debe crear un nuevo permiso de `read` sobre la colección de `directus_files` para acceder de forma libre a
+
+```
+/assets/0005d4cc-6d0c-4e92-8aac-fa00e8ffc196
+```
+
+Esta URL va directamente a la foto por lo que puede usar `AsyncImage` para renderizar la foto.
 
