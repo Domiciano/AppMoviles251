@@ -25,14 +25,18 @@ https://github.com/Domiciano/MOV251Lab7
 
 ```kt
 @Composable
-fun ProfileScreen( ... ) {
-	...
-	val imageURL by viewmodel.imageURL.collectAsState()
-	...
+fun ProfileScreen(...) {
+    // ...
+    val imageURL by viewmodel.imageURL.collectAsState()
+    // ...
     Scaffold { innerPadding ->
-        Column(modifier = Modifier.fillMaxSize().padding(innerPadding)) {
-			AsyncImage(
-				model = imageURL,
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(innerPadding)
+        ) {
+            AsyncImage(
+                model = imageURL,
                 contentDescription = "",
                 contentScale = ContentScale.Crop,
                 modifier = Modifier
@@ -41,13 +45,11 @@ fun ProfileScreen( ... ) {
                     .clip(CircleShape)
             )
 
-            Button(onClick = { ... }) {
+            Button(onClick = { /* ... */ }) {
                 Text("Cambiar foto")
             }
-            
-        }    
+        }
     }
-
 }
 ```
 
