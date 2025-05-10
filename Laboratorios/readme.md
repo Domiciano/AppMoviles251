@@ -39,6 +39,7 @@ En este laboratorio aprenderás a consumir una Rest API en Android, utilizando e
 </p>
 
 # <a href="https://github.com/Domiciano/AppMoviles251/tree/main/Laboratorios/Lab5">Laboratorio 5. Authentication</a>
+
 <p>
 En este laboratorio haremos lo básico de autenticación
 </p>
@@ -53,7 +54,24 @@ En este laboratorio crearemos una primera versión de nuestra base de datos
 </p>
 
 <p align="center">
-<a href="https://github.com/Domiciano/AppMoviles251/tree/main/Laboratorios/Lab6"><img src="https://www.creativefabrica.com/wp-content/uploads/2020/08/19/Vector-illustration-for-database-system-Graphics-5025911-1.jpg" width="386"></a><br>
+<a href="https://github.com/Domiciano/AppMoviles251/tree/main/Laboratorios/Lab6"><img src="https://raw.githubusercontent.com/Domiciano/AppMoviles251/refs/heads/main/res/images/Lab6Cover.png" width="386"></a><br>
 </p>
 
+
+# <a href="https://github.com/Domiciano/AppMoviles251/tree/main/Laboratorios/Lab7">Laboratorio 7. Taller de Websockets</a>
+<p>
+En este laboratorio crearemos una aplicación que funciona en tiempo real gracias al protocolo Websocket
+</p>
+<p align="center">
+<a href="https://github.com/Domiciano/AppMoviles251/tree/main/Laboratorios/Lab7"><img src="https://raw.githubusercontent.com/Domiciano/AppMoviles251/refs/heads/main/res/images/Lab7Cover.png" width="386"></a><br>
+</p>
+
+
+# <a href="https://github.com/Domiciano/AppMoviles251/tree/main/Laboratorios/Lab8">Laboratorio 8. Taller de uso de galería</a>
+<p>
+En este laboratorio usaremos la galería para subir fotos al servicio de almacenamiento y consumiremos esa información para ser usada en las aplicaciones
+</p>
+<p align="center">
+<a href="https://github.com/Domiciano/AppMoviles251/tree/main/Laboratorios/Lab8"><img src="https://raw.githubusercontent.com/Domiciano/AppMoviles251/refs/heads/main/res/images/Lab8Cover.png" width="386"></a><br>
+</p>
 
