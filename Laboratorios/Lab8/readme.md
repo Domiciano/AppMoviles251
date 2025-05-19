@@ -78,11 +78,11 @@ Button(onClick = { pickImageLauncher.launch("image/*") }) {
 ```
 
 
-# Content Resolver
+# `MultipartProvider`
 
 Necesitamos ahora alguna forma de convertir los `Uri` en `MultipartBody.Part` que es el formato en el que directus nos pide que enviemos las fotos.
 
-Podemos tratar el problema por medio de patrones de diseño Singleton y Service Locator. Para eso crearemos una clase de acceso `FileProvider` y la lógica la haremos en `FileSource` similar a como lo hemos hecho con `DataStore`.
+Podemos tratar el problema por medio de patrones de diseño Singleton y Service Locator. Para eso crearemos una clase de acceso `MultipartProvider` y la lógica la haremos en `FileSource` similar a como lo hemos hecho con `DataStore`.
 
 
 
@@ -95,7 +95,7 @@ import okhttp3.RequestBody.Companion.toRequestBody
 import java.io.IOException
 import java.util.UUID
 
-object FileProvider {
+object MultipartProvider {
 
     private var instance: FileSource? = null
 
@@ -133,7 +133,7 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         ...
-        FileProvider.init(applicationContext)
+        MultipartProvider.init(applicationContext)
         ...
         setContent {
             ...
@@ -188,7 +188,7 @@ Donde la respuesta es del tipo
 Gracias a nuestro Service Locator, ahora podemos crear los `@Part` usando
 
 ```kt
-val part = FileProvider.get().prepareMultipartFromUri(uri)
+val part = MultipartProvider.get().prepareMultipartFromUri(uri)
 ```
 
 En su capa lógica
@@ -256,3 +256,80 @@ Luego de esto debe crear un nuevo permiso de `read` sobre la colección de `dire
 
 Esta URL va directamente a la foto por lo que puede usar `AsyncImage` para renderizar la foto.
 
+
+
+# Apertura de cámara (OPCIONAL)
+
+```kt
+val takePictureLauncher = rememberLauncherForActivityResult(
+        contract = ActivityResultContracts.TakePicture()
+    ) {  success->
+        ...
+    }
+```
+
+Para ejecutar el launcher debe hacer
+
+```kt
+takePictureLauncher.launch(photoUri)
+```
+
+Donde `photoUri` es un estado de tipo `Uri`. Para definirlo, lo puede hacer en el ViewModel
+
+```kt
+val photoFile = MutableStateFlow(
+    MultipartProvider.get().createImageFile(UUID.randomUUID().toString())
+)
+```
+
+El método `createImageFile` puede ir en la clase de utilidad `MultipartProvider`
+
+```kt
+fun createImageFile(name:String): Uri {
+    return FileProvider.getUriForFile(
+        context,
+        "${context.packageName}.fileprovider",
+        File.createTempFile(
+                name, ".jpg", context.filesDir
+        )
+    )
+}
+```
+
+Note que se utiliza una clase configurable de Android llamada `FileProvider`.
+
+Esto requiere una configuración en el `manifest.xml`. Agregue un provider suministrando permisos de lectura sobre la carpeta de la aplicación.
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<manifest>
+    ...
+    <application> 
+        ...
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" 
+            />
+        </provider>
+    </application>
+</manifest>
+```
+
+Su archivo `file_paths.xml` debe ir en `res/xml`
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+    <files-path name="images" path="." />
+</paths>
+```
+
+
+# CDN
+
+<img src="https://www.hostinger.com/co/tutoriales/wp-content/uploads/sites/40/2023/12/%C2%BFCo%CC%81mo-funciona-una-CDN.png">
