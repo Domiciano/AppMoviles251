@@ -134,6 +134,21 @@ val notifyPendingIntent = PendingIntent.getActivity(
     context, 0, notifyIntent,
     PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
 )
+
+...
+
+manager.notify(
+    id++,
+    NotificationCompat
+        .Builder(context, CHANNEL_ID)
+        .setDefaults(Notification.DEFAULT_ALL)
+        .setContentText(message)
+        .setContentTitle(title)
+        .setContentIntent(notifyPendingIntent)  <-- Se abre la aplicación al dar click a la notificación
+        .setAutoCancel(true)
+        .setSmallIcon(R.drawable.ic_launcher_foreground)
+        .build()
+)
 ```
 # Enviar datos
 Para enviar datos debe hacer un POST Request a su nodo backend de modo que este nodo redirija al servicio de FCM. Recuerde que puede hacer POST Request por medio de la librería de Retrofit. <a href="https://github.com/Domiciano/AppMoviles241/tree/main/7.%20RestAPI">Aquí hay una guía</a>
@@ -146,18 +161,30 @@ Este es el servivio de mensajería actualizado y está pensado para se un nodo d
 
 
 Para obtener una clave de servicio ingrese a la configuración de su proyecto.
-<ol>
-    <li>Vaya a su proyecto de Firebase. `Configuración del proyecto` > `Cloud Messaging` </li>
-    <li>Si no esta habilitada la V1, actívela mendiante el link</li>
-    <li>Vaya a Administrar cuentas de servicio</li>
-    <li>Cree una cuenta de servicio usando el botón CREAR CUENTA DE SERVICIO con un nombre cualquiera</li>
-    <li>En rol escoga Firebase Admin y guarde</li>
-    <li>Ingrese a la cuenta de servicio y vaya a la pestaña CLAVES</li>
-    <li>Agrege una CLAVE JSON nueva</li>
-    <li>Descargue el JSON, ese será su clave.json para el programa</li>
-    <li>Ya tendrá todo lo necesario para publicar mensajes PUSH</li>
-</ol>
 
+
+
+1. Para obtener una clave de servicio ingrese a la configuración de su proyecto.
+
+2. Vaya a su proyecto de Firebase. `Configuración del proyecto` > `Cloud Messaging`
+
+3. Si no esta habilitada la V1, actívela mendiante el link
+
+4. Vaya a Administrar cuentas de servicio
+
+5. Cree una cuenta de servicio usando el botón CREAR CUENTA DE SERVICIO con un nombre cualquiera
+
+6. En rol escoga Firebase Admin y guarde
+
+7. Ingrese a la cuenta de servicio y vaya a la pestaña CLAVES
+
+8. Agrege una CLAVE JSON nueva
+
+9. Descargue el JSON, ese será su clave.json para el programa
+
+10. Ya tendrá todo lo necesario para publicar mensajes PUSH
+
+    
 # Nodo de backend
 El nodo de backend debe tener al menos un endpoint que reciba la solicitud de publicación de mensaje. Para realizarlo escoga el backend que mejor se ajuste a sus saberes
 
