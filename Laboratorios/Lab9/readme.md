@@ -85,9 +85,7 @@ class FCMService : FirebaseMessagingService() {
 # Crear notificaciones UI
 Generar notificaciones visualmente. Puede invocarlas dentro del servicio
 ```kotlin
-import com.google.firebase.messaging.FirebaseMessagingService
-import com.google.firebase.messaging.RemoteMessage
-import org.json.JSONObject
+package com.example.lab7.service
 
 import android.content.Context
 import android.app.Notification
@@ -95,16 +93,6 @@ import android.app.NotificationChannel
 import android.app.NotificationManager
 import androidx.core.app.NotificationCompat
 import com.example.lab7.R
-
-class FCMService : FirebaseMessagingService() {
-
-    override fun onMessageReceived(message: RemoteMessage) {
-        val obj = JSONObject(message.data as Map<*, *>)
-        val json = obj.toString()
-        NotificationUtil.showNotification(this, "ALFA", json)
-    }
-}
-
 
 object NotificationUtil {
 
