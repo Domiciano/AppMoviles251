@@ -85,11 +85,26 @@ class FCMService : FirebaseMessagingService() {
 # Crear notificaciones UI
 Generar notificaciones visualmente. Puede invocarlas dentro del servicio
 ```kotlin
+import com.google.firebase.messaging.FirebaseMessagingService
+import com.google.firebase.messaging.RemoteMessage
+import org.json.JSONObject
+
 import android.content.Context
 import android.app.Notification
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import androidx.core.app.NotificationCompat
+import com.example.lab7.R
+
+class FCMService : FirebaseMessagingService() {
+
+    override fun onMessageReceived(message: RemoteMessage) {
+        val obj = JSONObject(message.data as Map<*, *>)
+        val json = obj.toString()
+        NotificationUtil.showNotification(this, "ALFA", json)
+    }
+}
+
 
 object NotificationUtil {
 
@@ -97,18 +112,28 @@ object NotificationUtil {
     private val CHANNEL_NAME = "Messages";
     private var id = 0;
 
-    fun showNotification(context: Context, title:String, message:String){
-        val notificationManager = context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
-        val channel = NotificationChannel(CHANNEL_ID, CHANNEL_NAME, NotificationManager.IMPORTANCE_HIGH)
-        notificationManager.createNotificationChannel(channel)
-        val builder = NotificationCompat.Builder(context, CHANNEL_ID)
-                        .setDefaults(Notification.DEFAULT_ALL)
-                        .setContentText(message)
-                        .setContentTitle(title)
-                        .setSmallIcon(R.drawable.ic_launcher_foreground)
-        val notification = builder.build()
-        notificationManager.notify(id, notification)
-        id++
+    fun showNotification(context: Context, title: String, message: String) {
+        val manager =
+            context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+
+        manager.createNotificationChannel(
+            NotificationChannel(
+                CHANNEL_ID,
+                CHANNEL_NAME,
+                NotificationManager.IMPORTANCE_HIGH
+            )
+        )
+
+        manager.notify(
+            id++,
+            NotificationCompat
+                .Builder(context, CHANNEL_ID)
+                .setDefaults(Notification.DEFAULT_ALL)
+                .setContentText(message)
+                .setContentTitle(title)
+                .setSmallIcon(R.drawable.ic_launcher_foreground)
+                .build()
+        )
     }
 
 }
