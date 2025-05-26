@@ -207,8 +207,11 @@ Ambos repositorios muestran cómo se puede generar un short-time token para pode
 # Detalles de conexión
 El módulo de backend hace una solicitud HTTP POST al endpoint
 ```
-https://fcm.googleapis.com/v1/projects/facelogprueba/messages:send
+https://fcm.googleapis.com/v1/projects/miproyectofirebase/messages:send
 ```
+
+Donde `miproyectofirebase` es el nombre clave de su proyecto de firebase
+
 Los headers que usa son
 ```
 Content-Type: application/json; UTF-8
