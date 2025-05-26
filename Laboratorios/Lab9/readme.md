@@ -85,8 +85,6 @@ class FCMService : FirebaseMessagingService() {
 # Crear notificaciones UI
 Generar notificaciones visualmente. Puede invocarlas dentro del servicio
 ```kotlin
-package com.example.lab7.service
-
 import android.content.Context
 import android.app.Notification
 import android.app.NotificationChannel
